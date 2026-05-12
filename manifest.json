@@ -1,0 +1,46 @@
+﻿{
+  "name": "TKJ XI-9 — SMK Muhammadiyah Belitang",
+  "short_name": "TKJ XI-9",
+  "description": "Website resmi kelas Teknik Komputer dan Jaringan XI-9 SMK Muhammadiyah Belitang. Solid, Kreatif, dan Berdedikasi.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0f0a0a",
+  "theme_color": "#b91c1c",
+  "lang": "id",
+  "dir": "ltr",
+  "categories": ["education", "social"],
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' rx='36' fill='%23b91c1c'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='700' font-size='72' fill='white'>TKJ</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='96' fill='%23b91c1c'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='700' font-size='192' fill='white'>TKJ</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Anggota",
+      "short_name": "Anggota",
+      "description": "Lihat daftar anggota kelas",
+      "url": "./halaman/anggota/index.html",
+      "icons": []
+    },
+    {
+      "name": "Galeri",
+      "short_name": "Galeri",
+      "description": "Lihat galeri foto kelas",
+      "url": "./halaman/galeri/index.html",
+      "icons": []
+    }
+  ],
+  "prefer_related_applications": false
+}
+

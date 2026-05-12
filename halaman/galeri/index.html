@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="id" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self';
+             script-src 'self' 'unsafe-inline';
+             style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+             font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+             img-src 'self' data: blob: *;
+             media-src 'self' data: blob: *;
+             connect-src 'self';"
+    />
+
+    <title>TKJ XI-9 - Galeri Kelas | SMK Muhammadiyah Belitang</title>
+    <meta
+      name="description"
+      content="TKJ XI-9 - Galeri Kelas | Kelas Teknik Komputer Jaringan. Kenangan dan momen berharga bersama keluarga besar TKJ XI-9 SMK Muhammadiyah Belitang."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="../galeri/index.html" />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="TKJ XI-9 - Galeri Kelas | SMK Muhammadiyah Belitang"
+    />
+    <meta
+      property="og:description"
+      content="Kenangan dan momen berharga bersama keluarga besar TKJ XI-9."
+    />
+    <meta
+      property="og:image"
+      content="https://picsum.photos/seed/tkj-xi9-og/1200/630"
+    />
+    <meta property="og:url" content="../galeri/index.html" />
+
+    <link rel="manifest" href="../../manifest.json" />
+    <meta name="theme-color" content="#0f0a0a" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23b91c1c'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='700' font-size='13' fill='white'>TKJ</text></svg>"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Rajdhani:wght@500;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Rajdhani:wght@500;700&display=swap"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Rajdhani:wght@500;700&display=swap"
+    /></noscript>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+        <!-- Modular CSS -->
+    <link rel="stylesheet" href="../../pokok/gaya/dasar.css" />
+    <link rel="stylesheet" href="../../pokok/gaya/animasi.css" />
+    <link rel="stylesheet" href="../../pokok/gaya/tata-letak.css" />
+    <link rel="stylesheet" href="../../elemen/gaya/tombol.css" />
+    <link rel="stylesheet" href="../../elemen/gaya/kartu.css" />
+    <link rel="stylesheet" href="../../elemen/gaya/avatar.css" />
+    <link rel="stylesheet" href="../../elemen/gaya/formulir.css" />
+    <link rel="stylesheet" href="../../elemen/gaya/modal.css" />
+    <link rel="stylesheet" href="../../halaman/galeri/gaya.css" />
+  </head>
+  <body>
+    <!-- Animated network background -->
+    <canvas id="kanvas-jaringan"></canvas>
+
+    <!-- Background Audio Player (Persistent across pages) -->
+    <iframe
+      id="bingkai-audio"
+      src="../../eleme./elemen/audio-player.html"
+      style="display: none"
+      aria-hidden="true"
+      allow="autoplay"
+    ></iframe>
+
+    <a class="skip-link" href="#main-content">Lewati ke konten utama</a>
+    <div id="progres-halaman" aria-hidden="true"></div>
+
+    <header class="bilah-atas" role="banner">
+      <div class="brand-bilah-atas">
+        <a href="../../index.html" aria-label="TKJ XI-9 — Beranda">
+          <img
+            id="brand-logo"
+            src="../../assets/logo/logo-utama.svg"
+            alt="Logo TKJ XI-9"
+            class="brand-badge brand-logo"
+            role="button"
+            tabindex="0"
+            aria-label="Klik untuk memperbesar logo"
+          />
+          <div>
+            <div class="brand-name">TKJ XI-9</div>
+            <div class="brand-year mono">2026/2027</div>
+          </div>
+        </a>
+      </div>
+      <div class="aksi-bilah-atas">
+        <!-- Theme toggle & hamburger will be placed here by JS -->
+      </div>
+    </header>
+
+    <nav class="jejak-navigasi" aria-label="Breadcrumb">
+      <a href="../../index.html"
+        ><i class="fas fa-house" aria-hidden="true"></i> Beranda</a
+      >
+      <i class="fas fa-chevron-right" aria-hidden="true"></i>
+      <span class="bc-current" aria-current="page">Galeri</span>
+    </nav>
+
+    <main class="page wadah" id="main-content">
+      <div class="sec-head">
+        <div class="sec-tag">Momen Bersama</div>
+        <h1 class="sec-title">Galeri Kelas</h1>
+        <p class="deskripsi-seksi">
+          Kenangan dan momen berharga bersama keluarga besar TKJ XI-9. Klik foto
+          untuk memperbesar.
+        </p>
+      </div>
+
+      <section class="carousel-3d-wrapper reveal" aria-label="Sorotan Galeri">
+        <div class="sec-tag" style="text-align: center;">Sorotan</div>
+        <h2 class="sec-subtitle" style="text-align: center; margin-bottom: 2rem;">Foto Pilihan</h2>
+        <div class="carousel-3d" id="carousel-3d"></div>
+        <div class="carousel-3d-controls">
+          <button class="carousel-3d-prev" id="carousel-3d-prev" aria-label="Foto Sebelumnya">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <div class="carousel-3d-dots" id="carousel-3d-dots" role="tablist"></div>
+          <button class="carousel-3d-next" id="carousel-3d-next" aria-label="Foto Berikutnya">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </section>
+
+      <section class="gallery-section reveal" style="margin-top: 4rem;">
+        <div class="sec-tag">Galeri</div>
+        <h2 class="sec-subtitle">Koleksi Foto Kelas</h2>
+        <div
+          class="grid-galeri"
+          id="grid-galeri"
+          aria-label="Galeri foto kelas TKJ XI-9"
+          role="list"
+        ></div>
+      </section>
+
+      <p class="catatan-galeri" style="margin-top: 2rem;">
+        <i class="fas fa-camera" aria-hidden="true"></i>
+        Foto diperbarui oleh admin kelas · Hubungi ketua untuk menambah foto
+      </p>
+    </main>
+
+    <!-- Lightbox -->
+    <div
+      id="jendela-gambar"
+      class="jendela-gambar"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Tampilan foto besar"
+    >
+      <button class="tutup-jendela" id="tutup-jendela" aria-label="Tutup foto">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+      <div class="penghitung-jendela" id="lb-counter" aria-live="polite"></div>
+      <button
+        class="navigasi-jendela lb-prev"
+        id="lb-prev"
+        aria-label="Foto sebelumnya"
+      >
+        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+      </button>
+      <img id="lightbox-img" src="" alt="" loading="lazy" />
+      <button
+        class="navigasi-jendela lb-next"
+        id="lb-next"
+        aria-label="Foto berikutnya"
+      >
+        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+      </button>
+      <div class="bilah-keterangan-jendela" id="lb-caption-bar"></div>
+    </div>
+
+    <footer class="kaki-strip wadah" role="contentinfo">
+      <div class="footer-top">
+        <div class="footer-copy">
+          © <span class="footer-year hl"></span> TKJ XI-9 · SMK Muhammadiyah
+          Belitang
+        </div>
+        <div class="footer-links">
+          <a href="../../index.html">Beranda</a>
+          <a href="../pengembang/index.html">Tentang</a>
+        </div>
+      </div>
+      <div class="sosial-kaki" aria-label="Sosial media kami"></div>
+    </footer>
+
+    <button id="back-to-top" aria-label="Kembali ke atas">
+      <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- Logo Lightbox -->
+    <div
+      id="logo-jendela"
+      class="logo-jendela"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Logo TKJ XI-9 diperbesar"
+    >
+      <button
+        class="tutup-logo-jendela"
+        id="tutup-logo-jendela"
+        aria-label="Tutup logo"
+      >
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+      <img
+        id="gambar-logo-jendela"
+        src="../../assets/logo/logo-utama.svg"
+        alt="Logo TKJ XI-9"
+      />
+    </div>
+
+    <!-- Modular JS (ESM) -->
+    <script type="module">
+      import "../../pokok/skrip/pengaturan.js?v=2";
+      import "../../pokok/skrip/utama.js?v=2";
+      import "../../halaman/galeri/skrip.js?v=2";
+    </script>
+  </body>
+</html>
+

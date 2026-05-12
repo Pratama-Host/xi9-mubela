@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="id" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self';
+             script-src 'self' 'unsafe-inline';
+             style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+             font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+             img-src 'self' data: blob: *;
+             media-src 'self' data: blob: *;
+             connect-src 'self';" />
+
+  <title>TKJ XI-9 - Anggota Kelas | SMK Muhammadiyah Belitang</title>
+  <meta name="description"
+    content="TKJ XI-9 - Anggota Kelas | Kelas Teknik Komputer Jaringan. Daftar lengkap 20 anggota kelas TKJ XI-9 SMK Muhammadiyah Belitang dengan NIS masing-masing." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="../anggota/index.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="TKJ XI-9 - Anggota Kelas | SMK Muhammadiyah Belitang" />
+  <meta property="og:description" content="Daftar lengkap 20 anggota kelas TKJ XI-9 SMK Muhammadiyah Belitang." />
+  <meta property="og:image" content="https://picsum.photos/seed/tkj-xi9-og/1200/630" />
+  <meta property="og:url" content="../anggota/index.html" />
+
+  <link rel="manifest" href="../../manifest.json" />
+  <meta name="theme-color" content="#0f0a0a" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23b91c1c'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='700' font-size='13' fill='white'>TKJ</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Rajdhani:wght@500;700&display=swap" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Rajdhani:wght@500;700&display=swap"
+    media="print" onload="this.media = 'all'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Rajdhani:wght@500;700&display=swap" />
+  </noscript>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Modular CSS -->
+  <link rel="stylesheet" href="../../pokok/gaya/dasar.css" />
+  <link rel="stylesheet" href="../../pokok/gaya/animasi.css" />
+  <link rel="stylesheet" href="../../pokok/gaya/tata-letak.css" />
+  <link rel="stylesheet" href="../../elemen/gaya/tombol.css" />
+  <link rel="stylesheet" href="../../elemen/gaya/kartu.css" />
+  <link rel="stylesheet" href="../../elemen/gaya/avatar.css" />
+  <link rel="stylesheet" href="../../elemen/gaya/formulir.css" />
+  <link rel="stylesheet" href="../../elemen/gaya/modal.css" />
+  <link rel="stylesheet" href="../../halaman/anggota/gaya.css" />
+</head>
+
+<body>
+  <!-- Animated network background -->
+  <canvas id="kanvas-jaringan"></canvas>
+
+  <!-- Background Audio Player (Persistent across pages) -->
+  <iframe id="bingkai-audio" src="../../eleme./elemen/audio-player.html" style="display: none" aria-hidden="true"
+    allow="autoplay"></iframe>
+
+  <a class="skip-link" href="#main-content">Lewati ke konten utama</a>
+  <div id="progres-halaman" aria-hidden="true"></div>
+
+  <header class="bilah-atas" role="banner">
+    <div class="brand-bilah-atas">
+      <a href="../../index.html" aria-label="TKJ XI-9 — Beranda">
+        <img id="brand-logo" src="../../assets/logo/logo-utama.svg" alt="Logo TKJ XI-9" class="brand-badge brand-logo"
+          role="button" tabindex="0" aria-label="Klik untuk memperbesar logo" />
+        <div>
+          <div class="brand-name">TKJ XI-9</div>
+          <div class="brand-year mono">2026/2027</div>
+        </div>
+      </a>
+    </div>
+    <div class="aksi-bilah-atas">
+      <!-- Theme toggle & hamburger will be placed here by JS -->
+    </div>
+  </header>
+
+  <nav class="jejak-navigasi" aria-label="Breadcrumb">
+    <a href="../../index.html"><i class="fas fa-house" aria-hidden="true"></i> Beranda</a>
+    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+    <span class="bc-current" aria-current="page">Anggota</span>
+  </nav>
+
+  <main class="page wadah" id="main-content">
+    <div class="sec-head reveal">
+      <div class="sec-tag">Keluarga Besar</div>
+      <h1 class="sec-title">Anggota Kelas</h1>
+      <p class="deskripsi-seksi">
+        Daftar lengkap seluruh siswa-siswi kelas TKJ XI-9. Tekan
+        <kbd style="
+              font-family: monospace;
+              padding: 2px 6px;
+              border: 1px solid var(--border-mid);
+              border-radius: 4px;
+            ">/</kbd>
+        untuk mencari.
+      </p>
+    </div>
+
+    <!-- Search -->
+    <div class="bungkus-pencarian reveal" role="search">
+      <label for="member-search" class="sr-only">Cari anggota</label>
+      <div class="bilah-pencarian">
+        <i class="fas fa-search" aria-hidden="true"></i>
+        <input type="search" id="member-search" placeholder="Cari nama anggota..." autocomplete="off"
+          aria-label="Cari anggota" aria-controls="members-grid" spellcheck="false" />
+        <button class="hapus-pencarian" id="hapus-pencarian" aria-label="Hapus pencarian" type="button">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="members-count mono" id="member-count" aria-live="polite" aria-atomic="true"></div>
+    <div class="members-slider-container">
+      <button class="members-prev" aria-label="Anggota sebelumnya">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <div class="members-grid" id="members-grid" aria-label="Daftar anggota kelas"></div>
+      <button class="members-next" aria-label="Anggota berikutnya">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </main>
+
+  <!-- Member Detail Modal -->
+  <div id="member-modal" class="jendela-gambar" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="tutup-jendela" id="member-modal-tutup" aria-label="Tutup detail anggota">
+      <i class="fas fa-times" aria-hidden="true"></i>
+    </button>
+    <div class="card" style="max-width: 720px; padding: 18px">
+      <div style="display: flex; gap: 12px; align-items: center">
+        <div id="modal-avatar" class="avatar lg avatar-ring" aria-hidden="true"></div>
+        <div>
+          <h3 id="modal-name">—</h3>
+          <div id="modal-role" style="font-size: 0.85rem; color: var(--text-2); margin-bottom: 4px;"></div>
+          <div id="modal-nis" class="mono" style="color: var(--text-3)"></div>
+        </div>
+      </div>
+      <div id="modal-desc" style="margin-top: 12px; color: var(--text-2)"></div>
+      <div id="modal-social" style="margin-top: 12px; display: flex; gap: 8px"></div>
+      <div id="modal-audio" style="margin-top: 16px"></div>
+    </div>
+  </div>
+
+  <!-- Photo Lightbox (for member photos) -->
+  <div id="member-photo-lightbox" class="logo-jendela" role="dialog" aria-modal="true"
+    aria-label="Foto member diperbesar">
+    <button class="tutup-logo-jendela" id="member-photo-lightbox-tutup" aria-label="Tutup foto">
+      <i class="fas fa-times" aria-hidden="true"></i>
+    </button>
+    <img id="member-photo-lightbox-img" src="" alt="Foto member"
+      style="max-width: 90vw; max-height: 90vh; object-fit: contain" />
+  </div>
+
+  <footer class="kaki-strip wadah" role="contentinfo">
+    <div class="footer-top">
+      <div class="footer-copy">
+        © <span class="footer-year hl"></span> TKJ XI-9 · SMK Muhammadiyah
+        Belitang
+      </div>
+      <div class="footer-links">
+        <a href="../../index.html">Beranda</a>
+        <a href="../struktur/index.html">Struktur</a>
+      </div>
+    </div>
+    <div class="sosial-kaki" aria-label="Sosial media kami"></div>
+  </footer>
+
+  <button id="back-to-top" aria-label="Kembali ke atas">
+    <i class="fas fa-chevron-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- Logo Lightbox -->
+  <div id="logo-jendela" class="logo-jendela" role="dialog" aria-modal="true" aria-label="Logo TKJ XI-9 diperbesar">
+    <button class="tutup-logo-jendela" id="tutup-logo-jendela" aria-label="Tutup logo">
+      <i class="fas fa-times" aria-hidden="true"></i>
+    </button>
+    <img id="gambar-logo-jendela" src="../../assets/logo/logo-utama.svg" alt="Logo TKJ XI-9" />
+  </div>
+
+  <!-- Modular JS (ESM) -->
+  <script type="module">
+    import "../../pokok/skrip/pengaturan.js?v=2";
+    import "../../pokok/skrip/utama.js?v=2";
+    import "../../halaman/anggota/skrip.js?v=2";
+  </script>
+</body>
+
+</html>

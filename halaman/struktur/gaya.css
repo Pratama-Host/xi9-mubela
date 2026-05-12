@@ -1,0 +1,322 @@
+/* ================================================================
+   halaman/struktur/gaya.css — TKJ XI-9 | Structure Page
+   AESTHETICS: Premium, Dynamic, Platform-Native
+   ================================================================ */
+
+/* ── LAYOUT & WRAPPER ─────────────────────────────────────────── */
+.org-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding: 100px 0;
+  overflow-x: auto;
+  min-width: 100%;
+  /* Tema-aware: gelap di dark mode, terang di light mode */
+  background: var(--bg);
+  background-image: 
+    linear-gradient(rgba(var(--accent-rgb), 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--accent-rgb), 0.12) 1px, transparent 1px);
+  background-size: 60px 60px;
+  background-position: center center;
+  position: relative;
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  from { background-position: center 0; }
+  to { background-position: center 60px; }
+}
+
+.org-wrap::before {
+  content: "CORE_SYSTEM_ACTIVE // NODE_XI9";
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-family: "Fira Code", monospace;
+  font-size: 0.75rem;
+  color: var(--accent);
+  opacity: 0.4;
+  letter-spacing: 3px;
+  border-left: 2px solid var(--accent);
+  padding-left: 10px;
+}
+
+.org-row {
+  --gap: clamp(16px, 4vw, 60px);
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: var(--gap);
+  position: relative;
+  z-index: 2;
+  flex-wrap: nowrap;
+  padding: 40px 0; /* Padding atas dan bawah seimbang */
+  width: 100%;
+}
+
+/* Root: tidak ada konektor ke atas */
+.org-row.is-root {
+  padding-top: 0;
+}
+
+
+.org-row {
+  --gap: clamp(16px, 4vw, 40px);
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: var(--gap);
+  padding: 40px 0;
+  width: 100%;
+}
+
+.org-row.is-root {
+  padding-top: 0;
+}
+
+/* ── ORGANIZATION CARD ────────────────────────────────────────── */
+.org-card {
+  width: clamp(160px, 40vw, 210px);
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(var(--accent-rgb), 0.3);
+  clip-path: polygon(10% 0, 100% 0, 100% 85%, 90% 100%, 0 100%, 0 15%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  flex: 1;
+}
+
+.org-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent);
+  box-shadow: 0 15px 40px rgba(var(--accent-rgb), 0.3);
+  background: rgba(var(--accent-rgb), 0.1);
+}
+
+/* Border menyala saat klik (active state) */
+.org-card:active,
+.org-card:focus {
+  border-color: #fff;
+  box-shadow: 0 0 30px var(--accent), 0 0 10px #fff;
+  transform: translateY(-5px) scale(0.98);
+  outline: none;
+}
+
+.org-card-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.org-card.is-wali {
+  width: clamp(200px, 50vw, 240px);
+  background: linear-gradient(to bottom, var(--surface), var(--bg-2));
+}
+
+/* Lightbox Description Styles */
+.lb-nama {
+  font-weight: 700;
+  font-size: clamp(1.1rem, 3vw, 1.3rem);
+  color: #fff;
+  margin-bottom: 4px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.lb-jabatan {
+  color: var(--accent);
+  font-family: "Fira Code", monospace;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 14px;
+}
+
+.lb-profil {
+  font-size: 0.9rem;
+  color: var(--text-2);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+@media (max-width: 640px) {
+  .lb-profil {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+}
+
+.org-card.is-wali::before {
+  background: linear-gradient(var(--surface), var(--surface)) padding-box,
+    linear-gradient(
+        90deg,
+        var(--accent-2) 0%,
+        var(--accent) 25%,
+        var(--accent-2) 50%,
+        var(--accent) 75%,
+        var(--accent-2) 100%
+      )
+      border-box;
+  background-size: auto, 200% 100%;
+}
+
+@keyframes snakeBorderSlide {
+  0% { background-position: 0 0, 0% 0%; }
+  100% { background-position: 0 0, 200% 0%; }
+}
+
+@media (hover: hover) {
+  .org-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 32px rgba(var(--accent-rgb), 0.25);
+    z-index: 10;
+  }
+}
+
+/* ── CARD CONTENT ────────────────────────────────────────────── */
+.org-card-name {
+  position: relative;
+  z-index: 2;
+  margin-top: 14px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-1);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.org-card-pos {
+  position: relative;
+  z-index: 2;
+  font-size: 0.72rem;
+  color: var(--accent);
+  font-family: "Fira Code", monospace;
+  margin-top: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: rgba(var(--accent-rgb), 0.08);
+  border: 1px solid rgba(var(--accent-rgb), 0.15);
+  border-radius: 20px;
+  padding: 3px 12px;
+  display: inline-block;
+  font-weight: 500;
+}
+
+[data-theme="light"] .org-card-pos {
+  background: rgba(var(--accent-rgb), 0.05);
+  border-color: rgba(var(--accent-rgb), 0.1);
+}
+
+.org-card .avatar {
+  margin-bottom: 4px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* ── REVEAL ANIMATIONS ────────────────────────────────────────── */
+.org-card.reveal {
+  animation: cardSlideInScale 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+  animation-delay: var(--d, 0s);
+}
+
+@keyframes cardSlideInScale {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── RESPONSIVE TWEAKS ───────────────────────────────────────── */
+@media (max-width: 640px) {
+  .org-row {
+    gap: 12px;
+    padding-top: 40px;
+  }
+  .org-card {
+    width: 130px;
+    padding: 14px 10px;
+  }
+  .org-card.is-wali {
+    width: 160px;
+  }
+  .org-card-name {
+    font-size: 0.8rem;
+  }
+  .org-card-pos {
+    font-size: 0.6rem;
+    padding: 2px 8px;
+  }
+  /* Sesuaikan tinggi garis vertikal untuk mobile */
+  .org-card-wrap::before,
+  .org-card-wrap::after {
+    height: 20px;
+  }
+  .org-card-wrap::before { top: -20px; }
+  .org-card-wrap::after  { bottom: -20px; }
+  .org-row:not(.is-root) {
+    padding-top: 40px;
+  }
+  .org-card-wrap.is-child-wrap .card-connector-h {
+    top: -20px;
+  }
+  .org-row:not(.is-root)::before {
+    top: 20px;
+  }
+}
+
+/* ── EXTENDED DATA (PROFIL & SOSMED) ────────────────────────── */
+.org-card-desc {
+  font-size: 0.75rem;
+  color: var(--text-2);
+  margin-top: 12px;
+  line-height: 1.4;
+  opacity: 0.85;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 400;
+  transition: opacity var(--trans);
+}
+
+.org-card:hover .org-card-desc {
+  opacity: 1;
+}
+
+.org-card-social {
+  margin-top: 14px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.org-card-social a {
+  color: var(--text-3);
+  font-size: 1.15rem;
+  transition: color var(--trans), transform var(--trans);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.org-card-social a:hover {
+  color: var(--accent);
+  transform: translateY(-2px) scale(1.1);
+}
+

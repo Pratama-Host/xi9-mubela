@@ -1,0 +1,1047 @@
+<!doctype html>
+<html lang="id" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>
+      Developer Blog | Perjalanan Coding & Growth Mindset | Masdo Officials
+    </title>
+    <meta
+      name="description"
+      content="Blog developer Masdo Officials: dari WhatsApp Bot Baileys, AI learning philosophy, imposter syndrome, hingga aspirasi menjadi developer profesional. Cerita nyata tentang perjalanan coding, tantangan, dan inspirasi."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="../pengembang/index.html" />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Perjalanan Developer | Masdo Officials"
+    />
+    <meta
+      property="og:description"
+      content="Perjalanan developer Masdo Officials: dari WhatsApp Bot hingga filosofi belajar AI, tantangan, dan cita-cita masa depan."
+    />
+    <meta
+      property="og:image"
+      content="https://picsum.photos/seed/tkj-xi9-developer/1200/630"
+    />
+    <meta property="og:url" content="../pengembang/index.html" />
+
+    <link rel="manifest" href="../../manifest.json" />
+    <meta name="theme-color" content="#0f0a0a" />
+
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23b91c1c'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='700' font-size='13' fill='white'>TKJ</text></svg>"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+      />
+    </noscript>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Modular CSS -->
+    <link rel="stylesheet" href="../../pokok/gaya/dasar.css" />
+    <link rel="stylesheet" href="../../pokok/gaya/animasi.css" />
+    <link rel="stylesheet" href="../../pokok/gaya/tata-letak.css" />
+    <link rel="stylesheet" href="../../elemen/gaya/tombol.css" />
+    <link rel="stylesheet" href="../../elemen/gaya/kartu.css" />
+    <link rel="stylesheet" href="../../elemen/gaya/avatar.css" />
+    <link rel="stylesheet" href="../../elemen/gaya/formulir.css" />
+    <link rel="stylesheet" href="../../elemen/gaya/modal.css" />
+    <link rel="stylesheet" href="../../halaman/pengembang/gaya.css" />
+  </head>
+
+  <body>
+    <canvas id="kanvas-jaringan"></canvas>
+
+    <iframe
+      id="bingkai-audio"
+      src="../../elemen/audio-player.html"
+      style="display: none"
+      aria-hidden="true"
+      allow="autoplay"
+    ></iframe>
+
+    <a class="skip-link" href="#main-content">Lewati ke konten utama</a>
+    <div id="progres-halaman" aria-hidden="true"></div>
+
+    <header class="bilah-atas" role="banner">
+      <div class="brand-bilah-atas">
+        <a href="../../index.html" aria-label="TKJ XI-9 — Beranda">
+          <img
+            id="brand-logo"
+            src="../../assets/logo/logo-utama.svg"
+            alt="Logo TKJ XI-9"
+            class="brand-badge brand-logo"
+            role="button"
+            tabindex="0"
+            aria-label="Klik untuk memperbesar logo"
+          />
+          <div>
+            <div class="brand-name">Masdo Officials</div>
+            <div class="brand-year mono">2026/2027</div>
+          </div>
+        </a>
+      </div>
+      <div class="aksi-bilah-atas">
+        <!-- Theme toggle & hamburger injected by JS -->
+      </div>
+    </header>
+
+    <nav class="jejak-navigasi" aria-label="Breadcrumb">
+      <a href="../../index.html"
+        ><i class="fas fa-house" aria-hidden="true"></i> Beranda</a
+      >
+      <i class="fas fa-chevron-right" aria-hidden="true"></i>
+      <span class="bc-current" aria-current="page">Tentang</span>
+    </nav>
+
+    <main class="page wadah" id="main-content">
+      <div class="sec-head">
+        <div class="sec-tag">DEVELOPER</div>
+        <h1 class="sec-title">Perjalanan Developer</h1>
+        <p class="deskripsi-seksi" id="kelas-desc"></p>
+        <p class="dev-intro-text">
+          Cerita nyata tentang perjalanan dari kebingungan hingga pemahaman.
+          Dari WhatsApp Bot Baileys, filosofi belajar AI, tantangan imposter
+          syndrome, hingga aspirasi menjadi developer profesional di tingkat
+          internasional.
+        </p>
+      </div>
+
+      <!-- Wali Kelas -->
+      <div
+        class="wali-card reveal"
+        id="wali-card"
+        style="--d: 0s"
+        aria-label="Profil Developer Utama"
+      >
+        <div class="avatar-initials" id="avatar-initials" aria-hidden="true">
+          AP
+        </div>
+        <div class="wali-info">
+          <h3 class="wali-name">—</h3>
+          <p class="wali-pos mono">Wakil Ketua XI-9 TKJ</p>
+        </div>
+      </div>
+
+      <div
+        class="developer-tabs"
+        role="tablist"
+        aria-label="Navigasi cerita developer"
+      >
+        <div
+          id="tab-origin"
+          class="dev-tab active"
+          data-tab="origin"
+          role="tab"
+          aria-selected="true"
+          tabindex="0"
+        >
+          <i class="fas fa-book dev-tab-icon"></i>
+          <span class="dev-tab-title">Asal Saya</span>
+        </div>
+        <div
+          id="tab-ai_learning"
+          class="dev-tab"
+          data-tab="ai_learning"
+          role="tab"
+          aria-selected="false"
+          tabindex="-1"
+        >
+          <i class="fas fa-robot dev-tab-icon"></i>
+          <span class="dev-tab-title">AI & Belajar</span>
+        </div>
+        <div
+          id="tab-philosophy"
+          class="dev-tab"
+          data-tab="philosophy"
+          role="tab"
+          aria-selected="false"
+          tabindex="-1"
+        >
+          <i class="fas fa-lightbulb dev-tab-icon"></i>
+          <span class="dev-tab-title">Filosofi</span>
+        </div>
+        <div
+          id="tab-challenges"
+          class="dev-tab"
+          data-tab="challenges"
+          role="tab"
+          aria-selected="false"
+          tabindex="-1"
+        >
+          <i class="fas fa-fire dev-tab-icon"></i>
+          <span class="dev-tab-title">Tantangan</span>
+        </div>
+        <div
+          id="tab-inspiration"
+          class="dev-tab"
+          data-tab="inspiration"
+          role="tab"
+          aria-selected="false"
+          tabindex="-1"
+        >
+          <i class="fas fa-heart dev-tab-icon"></i>
+          <span class="dev-tab-title">Inspirasi</span>
+        </div>
+        <div
+          id="tab-goals"
+          class="dev-tab"
+          data-tab="goals"
+          role="tab"
+          aria-selected="false"
+          tabindex="-1"
+        >
+          <i class="fas fa-rocket dev-tab-icon"></i>
+          <span class="dev-tab-title">Tujuan</span>
+        </div>
+        <div
+          id="tab-journey_philosophy"
+          class="dev-tab"
+          data-tab="journey_philosophy"
+          role="tab"
+          aria-selected="false"
+          tabindex="-1"
+        >
+          <i class="fas fa-compass dev-tab-icon"></i>
+          <span class="dev-tab-title">Perjalanan & Filosofi</span>
+        </div>
+      </div>
+
+      <div class="developer-content">
+        <div
+          class="dev-content-item active"
+          data-content="origin"
+          role="tabpanel"
+          aria-labelledby="tab-origin"
+          aria-hidden="false"
+        >
+          <div class="dev-content-card">
+            <div class="dev-content-icon">
+              <i class="fas fa-book-open"></i>
+            </div>
+            <h2 class="dev-content-title">Asal Saya</h2>
+            <p class="section-subtitle">
+              Jejak pertama dari keraguan menuju rasa penasaran.
+            </p>
+            <figure class="article-photo">
+              <div class="article-photo-wrap">
+                <img
+                  src="../../assets/profil/profil-alfredo.webp"
+                  alt="Potret developer saat fokus dengan kode"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption>
+                Momen ketika kode mulai bermakna — dari teks acak menjadi bahasa
+                yang hidup.
+              </figcaption>
+            </figure>
+            <div class="dev-content-desc">
+              <p>
+                Saat SMP, kode bagi saya hanyalah teks acak yang seperti tidak berguna dan sangat susah untuk dimengerti.
+                Saya melihat layar hitam komputer(terminal) seperti kumpulan simbol yang rumit,
+                tanpa tahu mengapa orang-orang bisa begitu antusias dengan dunia
+                digital. Pelajaran komputer terasa membosankan — mengetik
+                dokumen Word, membuat presentasi Power Point, hal-hal yang
+                terasa hanya formalitas.
+              </p>
+              <h3>Titik Balik di SMK</h3>
+              <p>
+                Semua berubah setelah saya masuk SMK. Saya mulai melihat
+                teknologi sebagai bahasa yang bisa dimaknai, bukan sekadar teks.
+                Ketertarikan itu tumbuh ketika saya menemukan WhatsApp Bot
+                Baileys. Dari teman yang kebetulan berbagi repo, saya mulai
+                membongkar-bongkar kode dan mencoba memahami logika di baliknya.
+              </p>
+              <h3>Mulai dari Project Orang Lain</h3>
+              <p>
+                Saat pertama kali mencoba, saya tidak langsung membuat semuanya
+                dari nol. Saya memulai dari project milik orang lain,
+                mempelajari logika yang ada, lalu mengembangkannya sendiri. Hari
+                demi hari saya belajar struktur file, modularitas, dan perbedaan
+                antara CommonJS dan ESM. Saya menambah fitur, membuat handler
+                custom, dan perlahan mulai memahami event-driven architecture.
+              </p>
+              <h3>Malam Demi Malam Bergadang</h3>
+              <p>
+                Ada satu fase yang selalu saya ingat: saya begadang berkali-kali
+                hanya untuk membuat satu fitur baru di bot saya. Bukan sekadar
+                ngoding asal selesai. Itu adalah proses memahami bagaimana suatu
+                perintah bisa dijalankan oleh mesin, bagaimana event dapat
+                diproses dengan benar, dan bagaimana hasilnya bisa tercipta
+                persis seperti yang saya bayangkan. Setiap kesalahan adalah
+                kesempatan untuk belajar. Setiap fix adalah kepuasan tersendiri.
+              </p>
+              <h3>Nilai Sebenarnya Bukan dari Nol</h3>
+              <p>
+                Saya belajar bahwa perjalanan menjadi developer tidak selalu
+                dimulai dari garis nol. Malah, dalam banyak kasus saya berdiri
+                di pundak orang lain: mengambil project open source, mempelajari
+                pola, lalu membuatnya lebih kaya dan lebih advance. Itu bukan
+                "tidak asli" — itu adalah proses natural dalam dunia coding.
+              </p>
+              <h3>Mengalahkan Imposter Syndrome</h3>
+              <p>
+                Ironisnya, saya pernah minder karena selalu menggunakan karya
+                orang lain dan AI sebagai bagian dari proses. Namun pada
+                akhirnya saya sadar, nilai sebenarnya bukan terletak pada siapa
+                yang menciptakan kode pertama kali, melainkan bagaimana saya
+                memahami, mengembangkan, dan memperbaiki kode itu hingga menjadi
+                sesuatu yang lebih baik dan lebih berguna.
+              </p>
+              <p>
+                Itu adalah titik balik terbesar dalam perjalanan saya: dari
+                melihat kode sebagai teks acak menjadi bahasa yang penuh logika,
+                fungsi, kreativitas, dan kemungkinan tak terbatas.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── AI & Belajar ── -->
+        <div
+          class="dev-content-item"
+          data-content="ai_learning"
+          role="tabpanel"
+          aria-labelledby="tab-ai_learning"
+          aria-hidden="true"
+        >
+          <div class="dev-content-card">
+            <div class="dev-content-icon">
+              <i class="fas fa-robot" aria-hidden="true"></i>
+            </div>
+            <h2 class="dev-content-title">AI & Pembelajaran</h2>
+            <p class="section-subtitle">
+              Catatan ketika AI menjadi cermin dan guru.
+            </p>
+            <div class="dev-content-desc">
+              <h3>Bermacam Minat, Tapi Tidak Tuntas</h3>
+              <p>
+                Frontend, backend, UI/UX — semua menarik bagi saya. Namun
+                realitasnya, saya belum menguasai semuanya sendirian. Saya
+                selalu menggunakan AI sebagai partner untuk bekerja, menulis,
+                debugging, dan mempelajari kode baru. Awalnya itu menimbulkan
+                keraguan diri yang besar.
+              </p>
+              <h3>Krisis Identitas: Apakah Saya Developer "Asli"?</h3>
+              <p>
+                Awalnya, itu terasa seperti beban moral. Saya bertanya pada diri
+                sendiri: apakah ini masih pengembangan yang asli? Apakah saya
+                benar-benar seorang pengembang jika saya bergantung pada AI?
+                Saya membandingkan diri dengan developer lain yang menulis kode
+                dari nol, dan merasa seperti "penipu" dalam dunia tech.
+              </p>
+              <p>
+                Tetapi saya kemudian menemukan cara yang lebih bijak untuk
+                menggunakan AI: saya tidak meminta AI untuk bekerja tanpa
+                berpikir. Saya meminta AI untuk menjelaskan, untuk menjabarkan
+                pilihan, untuk menguji asumsi saya, dan untuk membandingkan
+                berbagai solusi.
+              </p>
+              <h3>AI Sebagai Guru, Bukan Pekerja</h3>
+              <p>
+                Contohnya, ketika saya membangun bot WhatsApp, saya tidak hanya
+                berkata, “Buat kode ini.” Saya bertanya, “Mengapa logika ini
+                bekerja seperti ini?” dan “Apa kekurangan pendekatan ini?”.
+                Itulah strategi yang membuat saya berkembang lebih cepat.
+              </p>
+              <p>
+                AI bagi saya bukanlah mesin penulis kode otomatis. AI adalah
+                alat pembelajaran. AI bisa membuat Anda lebih pintar jika Anda
+                menggunakannya sebagai guru. Tapi AI juga bisa membuat Anda
+                bodoh kalau Anda hanya copy-paste tanpa memahami.
+              </p>
+              <p>
+                Jadi filosofi saya sederhana: gunakan AI untuk mempercepat
+                kerja, tetapi jangan pernah menyerah pada proses belajar. Hanya
+                dengan begitu, AI menjadi kekuatan, bukan beban.
+              </p>
+            </div>
+
+            <!-- Enhanced code snippet -->
+            <div class="code-snippet" aria-label="Contoh kode bot WhatsApp">
+              <div class="code-snippet-header">
+                <span class="code-dot code-dot-red"></span>
+                <span class="code-dot code-dot-yellow"></span>
+                <span class="code-dot code-dot-green"></span>
+                <span class="code-snippet-lang">JavaScript</span>
+              </div>
+              <pre><code>
+<span class="code-line"><span class="c-comment">// Pendekatan yang benar: tanya "kenapa", bukan cuma "buatkan"</span></span>
+<span class="code-line"><span class="c-keyword">import</span> <span class="c-paren">{</span> <span class="c-const">makeWASocket</span><span class="c-paren">,</span> <span class="c-const">useMultiFileAuthState</span> <span class="c-paren">}</span> <span class="c-keyword">from</span> <span class="c-string">'@whiskeysockets/baileys'</span><span class="c-paren">;</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="c-comment">// Kenapa useMultiFileAuthState? Karena credentials perlu</span></span>
+<span class="code-line"><span class="c-comment">// persist antar restart — tanpa ini bot re-scan QR tiap kali.</span></span>
+<span class="code-line"><span class="c-keyword">const</span> <span class="c-paren">{</span> <span class="c-const">state</span><span class="c-paren">,</span> <span class="c-const">saveCreds</span> <span class="c-paren">}</span> <span class="c-keyword">=</span> <span class="c-keyword">await</span> <span class="c-func">useMultiFileAuthState</span><span class="c-paren">(</span><span class="c-string">'./session'</span><span class="c-paren">)</span><span class="c-paren">;</span></span>
+<span class="code-line"><span class="c-keyword">const</span> <span class="c-const">sock</span> <span class="c-keyword">=</span> <span class="c-func">makeWASocket</span><span class="c-paren">({</span> <span class="c-prop">auth</span><span class="c-paren">:</span> <span class="c-const">state</span> <span class="c-paren">})</span><span class="c-paren">;</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="c-comment">// creds.update WAJIB di-save — ini live binding, bukan copy.</span></span>
+<span class="code-line"><span class="c-const">sock</span><span class="c-paren">.</span><span class="c-prop">ev</span><span class="c-paren">.</span><span class="c-func">on</span><span class="c-paren">(</span><span class="c-string">'creds.update'</span><span class="c-paren">,</span> <span class="c-const">saveCreds</span><span class="c-paren">)</span><span class="c-paren">;</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="c-const">sock</span><span class="c-paren">.</span><span class="c-prop">ev</span><span class="c-paren">.</span><span class="c-func">on</span><span class="c-paren">(</span><span class="c-string">'messages.upsert'</span><span class="c-paren">,</span> <span class="c-keyword">async</span> <span class="c-paren">(</span><span class="c-paren">{</span> <span class="c-const">messages</span> <span class="c-paren">}</span><span class="c-paren">)</span> <span class="c-keyword">=></span> <span class="c-paren">{</span></span>
+<span class="code-line">  <span class="c-keyword">const</span> <span class="c-const">msg</span> <span class="c-keyword">=</span> <span class="c-const">messages</span><span class="c-paren">[</span><span class="c-number">0</span><span class="c-paren">]</span><span class="c-paren">;</span></span>
+<span class="code-line">  <span class="c-keyword">if</span> <span class="c-paren">(</span><span class="c-keyword">!</span><span class="c-const">msg</span><span class="c-paren">.</span><span class="c-prop">message</span><span class="c-paren">)</span> <span class="c-keyword">return</span><span class="c-paren">;</span> <span class="c-comment">// skip status updates</span></span>
+<span class="code-line">  <span class="c-comment">// handle pesan di sini...</span></span>
+<span class="code-line"><span class="c-paren">}</span><span class="c-paren">)</span><span class="c-paren">;</span></span>
+              </code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="dev-content-item"
+          data-content="philosophy"
+          role="tabpanel"
+          aria-labelledby="tab-philosophy"
+          aria-hidden="true"
+        >
+          <div class="dev-content-card">
+            <div class="dev-content-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h2 class="dev-content-title">Filosofi</h2>
+            <p class="section-subtitle">
+              Renungan tentang cara bekerja dan hidup.
+            </p>
+            <div class="dev-content-desc">
+              <h3>Kesabaran Sebagai Kunci</h3>
+              <p>
+                Saya percaya: tidak ada proyek besar yang selesai dalam satu
+                hari, kecuali Anda miliarder yang bisa membeli semua bantuan.
+                Harapan untuk selesai cepat hanya akan membuat kita frustasi.
+              </p>
+              <h3>Kerangka Dulu, UI Belakangan</h3>
+              <p>
+                Struktur aplikasi adalah pondasi. UI dan desain memang penting,
+                tetapi tanpa kerangka yang jelas, tampilan indah hanyalah
+                <em>skin</em> tanpa tulang.
+              </p>
+              <h3>AI Harus Dijadikan Guru</h3>
+              <p>
+                Jangan cuma memerintahkan AI. Minta AI untuk menjelaskan. Minta
+                AI untuk membandingkan dua solusi. Dengan begitu, Anda belajar
+                lebih dari sekadar mendapatkan kode.
+              </p>
+              <h3>Istirahat Bukan Melemah</h3>
+              <p>
+                Jika stuck, keluar sebentar, beli kopi, dan kembali dengan
+                kepala dingin. Saya sering menemukan solusi terbaik setelah
+                memberi jarak pada masalah.
+              </p>
+              <h3>Kode yang Baik, Bukan Hanya yang Bekerja</h3>
+              <p>
+                Readability is a feature. Kode yang bisa dibaca orang lain —
+                atau diri sendiri setahun kemudian — adalah kode yang
+                benar-benar selesai.
+              </p>
+            </div>
+            <blockquote class="motto-box">
+              "Kode yang baik bukan hanya yang bekerja — tapi yang bisa dibaca
+              dan dipahami orang lain setahun kemudian."
+            </blockquote>
+          </div>
+        </div>
+
+        <div
+          class="dev-content-item"
+          data-content="challenges"
+          role="tabpanel"
+          aria-labelledby="tab-challenges"
+          aria-hidden="true"
+        >
+          <div class="dev-content-card">
+            <div class="dev-content-icon">
+              <i class="fas fa-fire"></i>
+            </div>
+            <h2 class="dev-content-title">Tantangan</h2>
+            <p class="section-subtitle">
+              Pergulatan batin yang lebih berat dari kode.
+            </p>
+            <div class="dev-content-desc">
+              <h3>Imposter Syndrome Adalah Musuh Terbesar</h3>
+              <p>
+                Tantangan terbesar saya bukanlah error di terminal atau deadline
+                yang ketat. Tantangan terbesar saya adalah rasa minder dan
+                imposter syndrome yang seakan-akan terus berbisik: "Kamu tidak
+                cukup baik. Semua developer lain lebih baik. Kamu tidak layak
+                disebut developer."
+              </p>
+              <h3>Perasaan Tidak Otentik</h3>
+              <p>
+                Saya pernah merasa tidak layak menyebut diri sebagai pengembang
+                karena sering memulai dari karya orang lain dan karena AI selalu
+                membantu. Saya merasa itu membuat saya tidak “otentik”.
+              </p>
+              <p>
+                Perasaan itu sangat berat. Kadang membuat saya tidak percaya
+                diri saat berbicara tentang project saya. Kadang juga membuat
+                saya merasa seperti seorang "fraud" yang hanya kebetulan
+                berhasil.
+              </p>
+              <h3>Jalan Keluar: Acceptance & Redefine Success</h3>
+              <p>
+                Tetapi saya belajar bahwa perjalanan tiap orang berbeda. Memulai
+                dari adaptasi project lain adalah bagian normal dari proses
+                belajar. Setiap developer, bahkan yang terkenal di industri,
+                pernah melalui fase seperti ini.
+              </p>
+              <ul>
+                <li>
+                  Tidak semua developer membuat semuanya dari nol — mereka reuse
+                  libraries, frameworks, dan patterns
+                </li>
+                <li>
+                  AI bukan "cheating" — itu adalah tool seperti Google, Stack
+                  Overflow, atau mentorship
+                </li>
+                <li>
+                  Yang terpenting adalah: apakah Anda MEMAHAMI kode yang Anda
+                  tulis?
+                </li>
+                <li>
+                  Nilai sebenarnya ada pada problem-solving dan continuous
+                  improvement, bukan pada orisinil-nya kode
+                </li>
+              </ul>
+              <h3>Bug Kompleks Sebagai Guru</h3>
+              <p>
+                Ketika saya menghadapi bug kompleks pada bot WhatsApp, saya
+                tidak langsung menyerah. Saya berhenti, mengevaluasi ulang,
+                memecah masalah menjadi bagian-bagian kecil, dan kembali dengan
+                fresh mind. Itu bukan sekadar teknik debugging. Itu cara
+                berpikir yang terlatih melalui pengalaman berkali-kali.
+              </p>
+              <p>
+                Saya belajar bahwa kegagalan bukan tanda kelemahan. Kegagalan
+                adalah informasi. Dengan memahami apa yang gagal dan MENGAPA
+                gagal, kita bisa memperbaiki lebih cepat dan lebih permanent.
+              </p>
+              <h3>Redefine "Developer yang Baik"</h3>
+              <p>
+                Developer yang baik bukan yang tidak pernah membuat kesalahan
+                atau tidak pernah stuck. Developer yang baik adalah yang:
+              </p>
+              <ul>
+                <li>Tidak takut menghadapi problem baru</li>
+                <li>Tahu cara research dan troubleshoot dengan efektif</li>
+                <li>Belajar dari setiap kegagalan</li>
+                <li>Tidak malu untuk help dari tools dan community</li>
+                <li>Terus improve dan upgrade skill</li>
+              </ul>
+            </div>
+            <blockquote class="motto-box">
+              "Imposter syndrome bukan tanda kamu lemah — itu tanda kamu cukup
+              sadar untuk tahu ada yang belum kamu kuasai."
+            </blockquote>
+          </div>
+        </div>
+
+        <div
+          class="dev-content-item"
+          data-content="inspiration"
+          role="tabpanel"
+          aria-labelledby="tab-inspiration"
+          aria-hidden="true"
+        >
+          <div class="dev-content-card">
+            <div class="dev-content-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h2 class="dev-content-title">Inspirasi</h2>
+            <p class="section-subtitle">
+              Orang-orang dan gagasan yang menyalakan langkah.
+            </p>
+            <div class="dev-content-desc">
+              <h3>Bibi: Mimpi Besar dari Latar Sederhana</h3>
+              <p>
+                Bibi saya adalah inspirasi terbesar. Dari latar keluarga yang
+                sederhana, dia berhasil mengejar mimpi besar: bekerja di Jepang.
+                Tidak hanya sekedar bekerja, tetapi berkembang, mempelajari
+                budaya baru, dan membangun kehidupan yang lebih baik untuk
+                keluarga.
+              </p>
+              <p>
+                Apa yang saya pelajari dari bibi: latar belakang tidak
+                menentukan batas akhir. Tekad, kerja keras, dan keteguhan hati
+                yang menentukan. Tidak ada orang yang "terlalu rendah" untuk
+                memimpikan sesuatu yang besar. Perbedaan antara yang "bisa" dan
+                yang "tidak bisa" seringkali hanya ada di mindset.
+              </p>
+              <h3>Guru Konsisten: Kesederhanaan Mengalahkan Gemilang</h3>
+              <p>
+                Di SMK, ada guru yang mengajarkan saya arti konsistensi. Beliau
+                mengajar dari pagi sampai malam, tanpa mengeluh tentang gaji
+                atau status. Beliau hanya fokus pada satu hal: membuat siswanya
+                berkembang. Sikap itu menginspirasi saya untuk terus berusaha,
+                walau capek dan stuck.
+              </p>
+              <p>
+                Konsistensi sederhana seringkali lebih powerful daripada ambisi
+                besar yang tidak terencana. Guru saya membuktikan itu: tidak
+                perlu jadi superhero, cukup hadir, fokus, dan peduli.
+              </p>
+              <h3>Napoleon: Ambisi Besar, Strategi Jelas</h3>
+              <p>
+                Napoleon Bonaparte mengajari saya satu hal penting tentang
+                ambisi. Dia membuktikan bahwa ambisi besar BISA dicapai jika ada
+                strategi yang jelas dan eksekusi yang konsisten. Namun juga
+                menunjukkan bahwa ambisi tanpa strategi hanya akan menyebabkan
+                kerugian.
+              </p>
+              <p>
+                Dari Napoleon saya belajar: keberhasilan atau kegagalan,
+                keduanya bisa menginspirasi. Yang penting adalah bagaimana kita
+                belajar dari keduanya. Ambisi saya untuk menjadi developer
+                professional dan bekerja di luar negeri bukanlah hal yang
+                mustahil — tetapi butuh strategi yang jelas, learning path yang
+                terukur, dan eksekusi harian.
+              </p>
+              <h3>Inspirasi dari Open Source Community</h3>
+              <p>
+                Developer lain yang membuat Baileys, contributor di berbagai
+                project open source, mereka menginspirasi saya bahwa: code bukan
+                hanya untuk diri sendiri. Code bisa menjadi wadah untuk
+                berkontribusi pada komunitas global, membantu developer lain
+                belajar, dan menciptakan dampak positif.
+              </p>
+              <p>
+                Inspirasi ini membuat saya ingin tidak hanya menjadi developer
+                yang baik, tetapi menjadi developer yang bisa berkontribusi,
+                berbagi ilmu, dan membantu orang lain berkembang.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="dev-content-item"
+          data-content="goals"
+          role="tabpanel"
+          aria-labelledby="tab-goals"
+          aria-hidden="true"
+        >
+          <div class="dev-content-card">
+            <div class="dev-content-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h2 class="dev-content-title">Masa Depan</h2>
+            <p class="section-subtitle">
+              Rencana panjang yang berjarak namun jelas.
+            </p>
+            <div class="dev-content-desc">
+              <h3>Jangka Pendek</h3>
+              <ul style="text-align: left; display: inline-block">
+                <li>
+                  Menyelesaikan SMK dengan hasil terbaik dan mendapatkan
+                  portofolio yang solid.
+                </li>
+                <li>
+                  Membangun personal website yang bukan hanya menunjukkan
+                  project, tetapi juga cerita perjalanan.
+                </li>
+                <li>
+                  Mengumpulkan minimal 5 project meaningful yang menunjukkan
+                  perkembangan skill.
+                </li>
+              </ul>
+              <h3>Jangka Menengah</h3>
+              <ul style="text-align: left; display: inline-block">
+                <li>Melanjutkan studi programming ke Jerman.</li>
+                <li>
+                  Menguasai ekosistem JavaScript yang lebih dalam, termasuk
+                  React, Next.js, dan backend scalable.
+                </li>
+                <li>
+                  Menjadi contributor aktif di open source yang berdampak.
+                </li>
+              </ul>
+              <h3>Jangka Panjang</h3>
+              <ul style="text-align: left; display: inline-block">
+                <li>
+                  Menjadi pengembang profesional dengan standar internasional.
+                </li>
+                <li>
+                  Membangun jaringan global yang kuat dalam dunia teknologi.
+                </li>
+                <li>
+                  Menciptakan track record yang bisa menginspirasi para junior
+                  developer.
+                </li>
+                <li>Berkontribusi pada ekosistem teknologi lokal Indonesia.</li>
+              </ul>
+              <p
+                style="
+                  margin-top: 1.5rem;
+                  font-style: italic;
+                  color: var(--accent-2);
+                "
+              >
+                Semua ini bukan mimpi yang mustahil. Ini adalah rencana yang
+                dibangun dari konsistensi, disiplin, dan langkah demi langkah
+                yang terarah.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="dev-content-item"
+          data-content="journey_philosophy"
+          role="tabpanel"
+          aria-labelledby="tab-journey_philosophy"
+          aria-hidden="true"
+        >
+          <div class="dev-content-card">
+            <div class="dev-content-icon">
+              <i class="fas fa-compass"></i>
+            </div>
+            <h2 class="dev-content-title">Perjalanan & Filosofi</h2>
+            <p class="section-subtitle">
+              Enam babak nyata: dari kebingungan menuju pemahaman.
+            </p>
+
+            <div
+              class="timeline"
+              id="dev-timeline"
+              aria-label="Timeline perjalanan developer"
+            >
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="timeline-number">
+                  <i class="fas fa-seedling" aria-hidden="true"></i> Babak 01
+                </span>
+                <h3 class="timeline-heading">Awal yang Mengejutkan</h3>
+                <div class="timeline-body">
+                  Saya tidak menduga bahwa sesuatu yang dulu hanya terlihat
+                  seperti teks acak bisa berubah menjadi jalan hidup. Di SMP,
+                  kode terasa asing. Saat masuk SMK, saya berjumpa dengan
+                  WhatsApp Bot Baileys, dan pada saat itu pandangan saya
+                  terhadap digital berubah. Dari belajar satu perintah, saya
+                  kemudian mempelajari alur logika dan mengerti bahwa kode
+                  adalah bahasa, bukan sekadar teks.
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="timeline-number">
+                  <i class="fas fa-moon" aria-hidden="true"></i> Babak 02
+                </span>
+                <h3 class="timeline-heading">Begadang Demi Satu Fitur</h3>
+                <div class="timeline-body">
+                  Ada malam-malam ketika saya rela tidak tidur demi sebuah
+                  fitur. Bukan untuk pamer, tetapi untuk membuktikan pada diri
+                  sendiri bahwa saya bisa membawa ide menjadi nyata. Satu fitur
+                  yang selesai dengan pemahaman lebih dalam jauh lebih berharga
+                  daripada banyak fitur yang hanya setengah jadi.
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="timeline-number">
+                  <i class="fas fa-robot" aria-hidden="true"></i> Babak 03
+                </span>
+                <h3 class="timeline-heading">AI Sebagai Cermin</h3>
+                <div class="timeline-body">
+                  Saat saya mulai memakai AI, ada suara ragu yang berkata:
+                  apakah ini benar-benar saya? Namun saya segera menyadari bahwa
+                  AI tidak boleh hanya menjadi mesin penulis kode. Saya mulai
+                  memintanya menjelaskan alasan di balik solusinya. Percakapan
+                  dengan AI pun berubah menjadi proses belajar yang nyata.
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="timeline-number">
+                  <i class="fas fa-layer-group" aria-hidden="true"></i> Babak 04
+                </span>
+                <h3 class="timeline-heading">Logika Terlebih Dahulu</h3>
+                <div class="timeline-body">
+                  Saya sering lihat orang terjebak dalam tampilan sebelum
+                  struktur aplikasi matang. Kini saya percaya bahwa kerangka
+                  aplikasi adalah fondasi paling penting. Ketika struktur sudah
+                  kuat, UI akan mengikuti dengan lebih mudah dan lebih cepat.
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="timeline-number">
+                  <i class="fas fa-mug-hot" aria-hidden="true"></i> Babak 05
+                </span>
+                <h3 class="timeline-heading">Berhenti Bukan Tanda Menyerah</h3>
+                <div class="timeline-body">
+                  Pernah saya stuck total dengan bug yang tampak tak wajar.
+                  Alih-alih memaksa, saya memilih bangkit dan keluar sejenak —
+                  beli kopi, berjalan — lalu kembali dengan kepala lebih jernih.
+                  Di momen itulah saya sadar bahwa istirahat adalah strategi,
+                  bukan kelemahan.
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="timeline-number">
+                  <i class="fas fa-infinity" aria-hidden="true"></i> Babak 06
+                </span>
+                <h3 class="timeline-heading">
+                  Konsistensi adalah Jalan Panjang
+                </h3>
+                <div class="timeline-body">
+                  Maraton lebih penting daripada sprint. Kerja keras dalam satu
+                  hari tidak menjamin hasil bertahan lama. Konsistensi setiap
+                  hari, sekecil apapun, adalah yang membawa saya lebih dekat ke
+                  tujuan. Itulah yang membuat saya optimis.
+                </div>
+              </div>
+            </div>
+            <!-- /.timeline -->
+          </div>
+        </div>
+      </div>
+      <!-- /.developer-content -->
+
+      <!-- ═══ SKILL BARS ═══ -->
+      <div
+        class="skill-bars-section reveal"
+        aria-label="Level kemampuan teknis"
+      >
+        <h2 class="skill-bars-title">
+          <i class="fas fa-terminal" aria-hidden="true"></i>
+          Stack & Kemampuan
+        </h2>
+
+        <div class="skill-bar-item">
+          <div class="skill-bar-meta">
+            <span class="skill-bar-name">
+              <i class="fab fa-js-square"></i> JavaScript / Node.js
+            </span>
+            <span class="skill-bar-pct">82%</span>
+          </div>
+          <div class="skill-bar-track">
+            <div
+              class="skill-bar-fill"
+              style="--target-pct: 82%"
+              data-pct="82"
+            ></div>
+          </div>
+        </div>
+
+        <div class="skill-bar-item">
+          <div class="skill-bar-meta">
+            <span class="skill-bar-name">
+              <i class="fab fa-html5"></i> HTML / CSS
+            </span>
+            <span class="skill-bar-pct">78%</span>
+          </div>
+          <div class="skill-bar-track">
+            <div
+              class="skill-bar-fill"
+              style="--target-pct: 78%"
+              data-pct="78"
+            ></div>
+          </div>
+        </div>
+
+        <div class="skill-bar-item">
+          <div class="skill-bar-meta">
+            <span class="skill-bar-name">
+              <i class="fas fa-comments"></i> WhatsApp Bot (Baileys)
+            </span>
+            <span class="skill-bar-pct">75%</span>
+          </div>
+          <div class="skill-bar-track">
+            <div
+              class="skill-bar-fill"
+              style="--target-pct: 75%"
+              data-pct="75"
+            ></div>
+          </div>
+        </div>
+
+        <div class="skill-bar-item">
+          <div class="skill-bar-meta">
+            <span class="skill-bar-name">
+              <i class="fab fa-git-alt"></i> Git & Version Control
+            </span>
+            <span class="skill-bar-pct">65%</span>
+          </div>
+          <div class="skill-bar-track">
+            <div
+              class="skill-bar-fill"
+              style="--target-pct: 65%"
+              data-pct="65"
+            ></div>
+          </div>
+        </div>
+
+        <div class="skill-bar-item">
+          <div class="skill-bar-meta">
+            <span class="skill-bar-name">
+              <i class="fab fa-linux"></i> Linux CLI
+            </span>
+            <span class="skill-bar-pct">60%</span>
+          </div>
+          <div class="skill-bar-track">
+            <div
+              class="skill-bar-fill"
+              style="--target-pct: 60%"
+              data-pct="60"
+            ></div>
+          </div>
+        </div>
+
+        <div class="skill-bar-item">
+          <div class="skill-bar-meta">
+            <span class="skill-bar-name">
+              <i class="fas fa-database"></i> SQLite / Database Dasar
+            </span>
+            <span class="skill-bar-pct">50%</span>
+          </div>
+          <div class="skill-bar-track">
+            <div
+              class="skill-bar-fill"
+              style="--target-pct: 50%"
+              data-pct="50"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ STATS ═══ -->
+      <div class="stats-grid" aria-label="Statistik developer">
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-code-branch" aria-hidden="true"></i>
+          </div>
+          <div class="stat-number" data-target="30">0+</div>
+          <div class="stat-label">Proyek</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-infinity" aria-hidden="true"></i>
+          </div>
+          <div class="stat-number">∞</div>
+          <div class="stat-label">Semangat</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-layer-group" aria-hidden="true"></i>
+          </div>
+          <div class="stat-number" data-target="6">0+</div>
+          <div class="stat-label">Tech Stack</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-bullseye" aria-hidden="true"></i>
+          </div>
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Dedikasi</div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="kaki-strip wadah" role="contentinfo">
+      <div class="footer-top">
+        <div class="footer-copy">
+          © <span class="footer-year hl"></span> TKJ XI-9 · SMK Muhammadiyah
+          Belitang
+        </div>
+        <div class="footer-links">
+          <a href="../../index.html">Beranda</a>
+          <a href="../struktur/index.html">Struktur</a>
+        </div>
+      </div>
+      <div class="sosial-kaki" aria-label="Sosial media kami"></div>
+    </footer>
+
+    <button type="button" id="back-to-top" aria-label="Kembali ke atas">
+      <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- Logo Lightbox -->
+    <div
+      id="logo-jendela"
+      class="logo-jendela"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Logo TKJ XI-9 diperbesar"
+    >
+      <button
+        class="tutup-logo-jendela"
+        id="tutup-logo-jendela"
+        aria-label="Tutup logo"
+      >
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+      <img
+        id="gambar-logo-jendela"
+        src="../../assets/logo/logo-utama.svg"
+        alt="Logo TKJ XI-9"
+      />
+    </div>
+
+    <!-- Photo Lightbox -->
+    <div
+      id="photo-lightbox"
+      class="photo-lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Foto diperbesar"
+    >
+      <button
+        class="photo-lightbox-close"
+        id="photo-lightbox-close"
+        aria-label="Tutup foto"
+      >
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+      <img id="photo-lightbox-img" src="" alt="" />
+    </div>
+
+    
+        <!-- Modular JS (ESM) -->
+    <script type="module" src="../../pokok/skrip/pengaturan.js?v=2"></script>
+    <script type="module" src="../../pokok/skrip/utama.js?v=2"></script>
+    <script type="module" src="../../halaman/pengembang/skrip.js?v=2"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+

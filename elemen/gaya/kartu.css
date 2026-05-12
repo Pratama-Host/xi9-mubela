@@ -1,0 +1,127 @@
+﻿/* ================================================================
+   kartu.css — TKJ XI-9 | Card · Icon Box · Chip
+   ================================================================ */
+
+/* BASE CARD */
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-m); padding: 20px;
+  position: relative; overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.3s var(--ease-in-out), box-shadow 0.3s var(--ease-in-out), transform 0.36s var(--ease-spring), background 0.25s var(--ease-in-out);
+}
+.card::after {
+  content: ""; position: absolute; inset: -1px;
+  border-radius: var(--radius-m);
+  background: linear-gradient(135deg, rgba(var(--accent-rgb),0.45) 0%, transparent 48%, rgba(var(--accent-rgb),0.18) 100%);
+  opacity: 0; transition: opacity 0.35s var(--ease-in-out);
+  pointer-events: none; z-index: -1;
+}
+@media (hover: hover) {
+  .card:hover { border-color: var(--border-mid); box-shadow: var(--shadow-glow); transform: translateY(-6px); }
+  .card:hover::after { opacity: 1; }
+}
+
+/* CARD ACCENT TOP */
+.card-accent-top::before {
+  content: ""; display: block; height: 2px;
+  border-radius: var(--radius-m) var(--radius-m) 0 0;
+  margin: -20px -20px 20px;
+  background: linear-gradient(90deg, rgba(var(--accent-rgb),0.95) 0%, rgba(var(--accent-rgb),0.7) 50%, rgba(var(--accent-rgb),0.45) 100%);
+  background-size: 200% 100%;
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s var(--ease-spring), background-position 0.4s var(--ease-in-out);
+}
+@media (hover: hover) {
+  .card.card-accent-top:hover::before { transform: scaleX(1); background-position: right center; }
+}
+
+/* CARD GLOW */
+.card-glow {
+  box-shadow: 0 0 0 1px rgba(var(--accent-rgb),0.08), 0 20px 45px rgba(0,0,0,0.12), 0 0 120px rgba(var(--accent-rgb),0.08);
+}
+
+/* ICON BOX */
+.icon-box {
+  width: 42px; height: 42px; border-radius: var(--radius-s);
+  background: linear-gradient(135deg, var(--accent-900), var(--accent-700));
+  color: var(--text-1-inverse); display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  box-shadow: 0 3px 12px var(--glow), inset 0 1px 0 rgba(255,255,255,0.1);
+  flex-shrink: 0;
+  transition: transform 0.35s var(--ease-spring), box-shadow 0.35s var(--ease-in-out);
+  position: relative; overflow: hidden;
+}
+.icon-box::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+.icon-box.lg { width: 52px; height: 52px; font-size: 1.25rem; border-radius: var(--radius-m); }
+@media (hover: hover) {
+  .card:hover .icon-box {
+    transform: rotate(-5deg) scale(1.08);
+    box-shadow: 0 6px 20px var(--glow), inset 0 1px 0 rgba(255,255,255,0.15);
+  }
+}
+
+/* CHIP / BADGE */
+.chip {
+  display: inline-block; font-family: "Fira Code", monospace;
+  font-size: var(--text-xs); padding: 3px 9px; border-radius: 20px;
+  background: rgba(var(--accent-rgb),0.1); color: var(--accent);
+  border: 1px solid var(--border-mid); letter-spacing: 0.04em;
+}
+
+/* WALI CARD */
+.wali-card {
+  display: flex; gap: 18px; align-items: center; padding: 22px;
+  background: linear-gradient(135deg, var(--surface) 0%, var(--bg-3) 100%);
+  border: 1px solid var(--border); border-left: 3px solid var(--accent);
+  border-radius: var(--radius-m); margin-bottom: 24px;
+  box-shadow: var(--shadow-sm); transition: box-shadow 0.3s, border-color 0.3s;
+}
+@media (hover: hover) { .wali-card:hover { box-shadow: var(--shadow-glow); border-color: var(--border-mid); } }
+.wali-info h3 {
+  font-family: "Rajdhani", sans-serif; font-size: var(--text-lg); font-weight: 700;
+  color: var(--text-1); margin-bottom: 4px; transition: color var(--trans);
+}
+.wali-info p { font-size: var(--text-sm); color: var(--text-3); }
+
+/* STAT CARD (global) */
+.stat-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-m); padding: 20px; box-shadow: var(--shadow-sm);
+  transition: all var(--trans);
+}
+.stat-card:hover { transform: translateY(-8px) scale(1.02); border-color: var(--accent); box-shadow: 0 12px 32px rgba(var(--accent-rgb),0.15); }
+
+/* ABOUT CARD */
+.about-card { padding: 20px; }
+.about-card h3 {
+  font-family: "Rajdhani", sans-serif; font-size: var(--text-lg); font-weight: 700;
+  color: var(--text-1); margin: 12px 0 10px; transition: color var(--trans);
+}
+.about-card p { font-size: var(--text-sm); color: var(--text-2); line-height: 1.7; }
+
+/* PRESTASI */
+.prestasi-item {
+  display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+  padding: 12px 14px; background: var(--bg-3);
+  border: 1px solid var(--border); border-left: 4px solid var(--accent);
+  border-radius: var(--radius-m); transition: all var(--trans);
+}
+@media (hover: hover) {
+  .prestasi-item:hover { background: var(--surface); transform: translateX(8px); border-color: var(--accent); box-shadow: 0 4px 20px rgba(var(--accent-rgb),0.1); }
+}
+.prestasi-badge {
+  font-family: "Fira Code", monospace; font-size: 0.62rem; padding: 3px 9px;
+  border-radius: 20px; background: rgba(var(--accent-rgb),0.08); color: var(--accent);
+  border: 1px solid var(--border-mid); white-space: nowrap; flex-shrink: 0; letter-spacing: 0.04em;
+}
+.prestasi-judul { font-size: var(--text-sm); font-weight: 700; color: var(--text-1); flex: 1; min-width: 160px; transition: color var(--trans); }
+.prestasi-tingkat {
+  font-family: "Fira Code", monospace; font-size: 0.62rem; padding: 2px 8px;
+  border-radius: 20px; border: 1px solid var(--border); color: var(--text-3);
+  white-space: nowrap; transition: color var(--trans), border-color var(--trans);
+}

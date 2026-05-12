@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="id" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self';
+             script-src 'self' 'unsafe-inline';
+             style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+             font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+             img-src 'self' data: blob: *;
+             media-src 'self' data: blob: *;
+             connect-src 'self';"
+    />
+
+    <!-- SEO -->
+    <title>TKJ XI-9 - Beranda | SMK Muhammadiyah Belitang</title>
+    <meta
+      name="description"
+      content="TKJ XI-9 - Beranda | Teknik Komputer Jaringan SMK Muhammadiyah Belitang. Solid, Kreatif, dan Berdedikasi Tanpa Batas dalam menguasai teknologi digital."
+    />
+    <meta
+      name="keywords"
+      content="TKJ, XI-9, SMK Muhammadiyah Belitang, Teknik Komputer Jaringan, kelas TKJ"
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="./index.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="TKJ XI-9 - Beranda | SMK Muhammadiyah Belitang"
+    />
+    <meta
+      property="og:description"
+      content="Kelas Teknik Komputer Jaringan yang solid, kreatif, dan berdedikasi. Komunitas pejuang digital SMK Muhammadiyah Belitang."
+    />
+    <meta
+      property="og:image"
+      content="https://picsum.photos/seed/tkj-xi9-og/1200/630"
+    />
+    <meta property="og:url" content="./index.html" />
+    <meta property="og:locale" content="id_ID" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="TKJ XI-9 - Beranda | SMK Muhammadiyah Belitang"
+    />
+    <meta
+      name="twitter:description"
+      content="Kelas Teknik Komputer Jaringan SMK Muhammadiyah Belitang"
+    />
+    <meta
+      name="twitter:image"
+      content="https://picsum.photos/seed/tkj-xi9-og/1200/630"
+    />
+
+    <!-- PWA -->
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="theme-color" content="#0f0a0a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <!-- Favicon (inline SVG) -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23b91c1c'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='700' font-size='13' fill='white'>TKJ</text></svg>"
+    />
+
+    <!-- Fonts Preload -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Rajdhani:wght@500;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Rajdhani:wght@500;700&display=swap"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Rajdhani:wght@500;700&display=swap"
+      />
+    </noscript>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Modular CSS -->
+    <link rel="stylesheet" href="./pokok/gaya/dasar.css" />
+    <link rel="stylesheet" href="./pokok/gaya/animasi.css" />
+    <link rel="stylesheet" href="./pokok/gaya/tata-letak.css" />
+    <link rel="stylesheet" href="./elemen/gaya/tombol.css" />
+    <link rel="stylesheet" href="./elemen/gaya/kartu.css" />
+    <link rel="stylesheet" href="./elemen/gaya/avatar.css" />
+    <link rel="stylesheet" href="./elemen/gaya/formulir.css" />
+    <link rel="stylesheet" href="./elemen/gaya/modal.css" />
+    <link rel="stylesheet" href="./halaman/beranda/gaya.css" />
+  </head>
+  <body>
+    <!-- Animated network background -->
+    <canvas id="kanvas-jaringan"></canvas>
+
+    <!-- Background Audio Player (Persistent across pages) -->
+    <iframe
+      id="bingkai-audio"
+      src="./elemen/audio-player.html"
+      style="display: none"
+      aria-hidden="true"
+      allow="autoplay"
+    ></iframe>
+
+    <!-- SKIP TO CONTENT -->
+    <a class="skip-link" href="#main-content">Lewati ke konten utama</a>
+
+    <!-- PAGE PROGRESS (link navigation) -->
+    <div id="progres-halaman" aria-hidden="true"></div>
+    <!-- SCROLL PROGRESS (top thin bar) -->
+    <div id="progres-gulir" aria-hidden="true"></div>
+
+    <!-- INTRO -->
+    <div
+      id="intro"
+      role="dialog"
+      aria-label="Layar pembuka TKJ XI-9"
+      aria-modal="true"
+    >
+      <div class="intro-grid" aria-hidden="true"></div>
+      <div class="intro-scan" aria-hidden="true"></div>
+      <div class="intro-corners" aria-hidden="true">
+        <div class="c c-tl"></div>
+        <div class="c c-tr"></div>
+        <div class="c c-bl"></div>
+        <div class="c c-br"></div>
+      </div>
+      <div class="intro-body">
+        <div class="intro-word" data-text="WELCOME" aria-hidden="true">
+          WELCOME
+        </div>
+        <div class="intro-sub" id="intro-sub" aria-live="polite">
+          Initializing TKJ XI-9...
+        </div>
+        <div class="intro-bar-wrap" aria-hidden="true">
+          <div
+            class="intro-bar"
+            id="intro-bar"
+            role="progressbar"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0"
+          ></div>
+        </div>
+        <div class="intro-pct" id="intro-pct" aria-hidden="true">0%</div>
+      </div>
+    </div>
+
+    <!-- TOP BAR -->
+    <header class="bilah-atas" role="banner">
+      <div class="brand-bilah-atas">
+        <img
+          id="brand-logo"
+          src="./assets/logo/logo-utama.svg"
+          alt="Logo TKJ XI-9"
+          class="brand-badge brand-logo"
+          role="button"
+          tabindex="0"
+          aria-label="Klik untuk memperbesar logo"
+        />
+        <div>
+          <div class="brand-name">TKJ XI-9</div>
+          <div class="brand-year mono">2026/2027</div>
+        </div>
+      </div>
+      <div class="aksi-bilah-atas">
+        <!-- Theme toggle & hamburger will be placed here by JS -->
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main id="main-content">
+      <!-- Hero -->
+      <section class="hero" aria-label="Selamat datang di TKJ XI-9">
+        <div class="hero-noise" aria-hidden="true"></div>
+        <div class="hero-floats" aria-hidden="true">
+          <div class="float-icon fi1"><i class="fas fa-network-wired"></i></div>
+          <div class="float-icon fi2"><i class="fas fa-code"></i></div>
+          <div class="float-icon fi3"><i class="fas fa-shield-halved"></i></div>
+          <div class="float-icon fi4"><i class="fas fa-microchip"></i></div>
+          <div class="float-icon fi5"><i class="fas fa-terminal"></i></div>
+          <div class="float-icon fi6"><i class="fas fa-server"></i></div>
+        </div>
+        <div class="hero-content">
+          <div class="hero-eyebrow">Teknik Komputer &amp; Jaringan</div>
+          <h1 class="hero-title">
+            SMK <span class="hl glitch-text" data-text='MUBELA'>MUBELA</span><br />XI-9 TKJ.
+          </h1>
+          <p
+            class="hero-desc"
+            id="slogan-pahlawan"
+            aria-live="polite"
+            data-fallback="Komunitas pejuang digital yang siap menguasai jaringan, keamanan siber, dan teknologi masa depan dengan semangat dan kompetensi nyata."
+          >
+            Komunitas pejuang digital yang siap menguasai jaringan, keamanan
+            siber, dan teknologi masa depan dengan semangat dan kompetensi
+            nyata.
+          </p>
+          <div class="hero-cta">
+            <a href="./halaman/pengembang/index.html" class="tombol tombol-utama"
+              >Kenali Kami <i class="fas fa-arrow-right" aria-hidden="true"></i
+            ></a>
+            <a href="./halaman/anggota/index.html" class="tombol tombol-garis"
+              >Lihat Anggota</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Strip -->
+      <section class="stats-section reveal" aria-label="Statistik kelas">
+        <div class="wadah">
+          <div id="strip-statistik" class="strip-statistik"></div>
+        </div>
+      </section>
+
+      <!-- Guru Section: Tim Pengajar TKJ XI-9 -->
+      <section
+        id="guru-section"
+        class="wadah reveal"
+        aria-label="Tim Pengajar TKJ XI-9"
+      >
+        <div class="sec-header">
+          <div class="sec-tag">Tim Pengajar</div>
+          <h2 class="sec-title">Arsitek Kompetensi Kami</h2>
+        </div>
+        <div class="grid-guru"></div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="kaki-strip wadah" role="contentinfo">
+        <div class="footer-top">
+          <div class="footer-copy">
+            © <span class="footer-year hl"></span> TKJ XI-9 · SMK Muhammadiyah
+            Belitang
+          </div>
+          <div class="footer-links">
+            <a href="./halaman/tkj/index.html">Info TKJ</a>
+            <a href="./halaman/pengembang/index.html">Tentang</a>
+            <a href="./404.html">404</a>
+            <a href="./offline.html">Offline</a>
+          </div>
+        </div>
+        <div class="sosial-kaki" aria-label="Sosial media kami"></div>
+        <div style="display: flex; justify-content: flex-end">
+          <button id="replay-intro-tombol" aria-label="Putar ulang intro">
+            <i class="fas fa-rotate-right" aria-hidden="true"></i> Replay Intro
+          </button>
+        </div>
+      </footer>
+    </main>
+
+    <!-- BACK TO TOP -->
+    <button id="back-to-top" aria-label="Kembali ke atas">
+      <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- Logo Lightbox -->
+    <div
+      id="logo-jendela"
+      class="logo-jendela"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Logo TKJ XI-9 diperbesar"
+    >
+      <button
+        class="tutup-logo-jendela"
+        id="tutup-logo-jendela"
+        aria-label="Tutup logo"
+      >
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+      <img
+        id="gambar-logo-jendela"
+        src="./assets/logo/logo-utama.svg"
+        alt="Logo TKJ XI-9"
+      />
+    </div>
+
+    <!-- Modular JS (ESM) -->
+    <script type="module" src="./pokok/skrip/pengaturan.js?v=2"></script>
+    <script type="module" src="./pokok/skrip/utama.js?v=2"></script>
+    <script type="module" src="./halaman/beranda/skrip.js?v=2"></script>
+  </body>
+</html>
+
+

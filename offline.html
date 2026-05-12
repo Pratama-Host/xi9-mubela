@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="id" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self';
+             script-src 'self' 'unsafe-inline';
+             style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+             font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+             img-src 'self' data: blob: *;
+             media-src 'self' data: blob: *;
+             connect-src 'self';"
+    />
+
+    <title>Offline — TKJ XI-9</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="manifest" href="./manifest.json" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23b91c1c'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='700' font-size='13' fill='white'>TKJ</text></svg>"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Rajdhani:wght@500;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./pokok/gaya/dasar.css" />
+    <script>
+      (function () {
+        const t = localStorage.getItem("tkj-theme") || "dark";
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 32px 24px;
+        text-align: center;
+      }
+      .ol-icon {
+        font-size: 4rem;
+        color: var(--text-3);
+        animation: pulse 2s ease-in-out infinite;
+        margin-bottom: 20px;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.35;
+        }
+      }
+      .ol-title {
+        font-family: "Rajdhani", sans-serif;
+        font-size: var(--text-2xl);
+        font-weight: 700;
+        color: var(--text-1);
+        margin-bottom: 10px;
+      }
+      .ol-desc {
+        font-size: var(--text-sm);
+        color: var(--text-2);
+        line-height: 1.7;
+        max-width: 380px;
+        margin: 0 auto 28px;
+      }
+      .ol-info {
+        font-family: "Fira Code", monospace;
+        font-size: var(--text-xs);
+        color: var(--text-3);
+        margin-top: 20px;
+        letter-spacing: 0.08em;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Animated network background -->
+    <canvas id="kanvas-jaringan"></canvas>
+
+    <!-- Background Audio Player (Persistent across pages) -->
+    <iframe
+      id="bingkai-audio"
+      src="./eleme./elemen/audio-player.html"
+      style="display: none"
+      aria-hidden="true"
+      allow="autoplay"
+    ></iframe>
+
+    <header class="bilah-atas" role="banner" style="position: fixed; top: 0; left: 0; right: 0; z-index: 10;">
+      <div class="brand-bilah-atas">
+        <a href="./index.html" aria-label="TKJ XI-9 — Beranda">
+          <img
+            id="brand-logo"
+            src="./assets/logo/logo-utama.svg"
+            alt="Logo TKJ XI-9"
+            class="brand-badge brand-logo"
+            role="button"
+            tabindex="0"
+            aria-label="Klik untuk memperbesar logo"
+          />
+          <div>
+            <div class="brand-name">TKJ XI-9</div>
+            <div class="brand-year mono">2026/2027</div>
+          </div>
+        </a>
+      </div>
+      <div class="aksi-bilah-atas">
+        <!-- Theme toggle & hamburger will be placed here by JS -->
+      </div>
+    </header>
+
+    <div class="ol-icon" aria-hidden="true"><i class="fas fa-wifi"></i></div>
+    <h1 class="ol-title">Kamu Sedang Offline</h1>
+    <p class="ol-desc">
+      Tidak ada koneksi internet. Beberapa halaman yang sudah kamu kunjungi
+      sebelumnya mungkin masih bisa diakses dari cache.
+    </p>
+    <div
+      style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap"
+    >
+      <a href="./index.html" class="tombol tombol-utama">
+        <i class="fas fa-house" aria-hidden="true"></i> Coba Beranda
+      </a>
+      <button class="tombol tombol-garis" onclick="window.location.reload()">
+        <i class="fas fa-rotate-right" aria-hidden="true"></i> Coba Lagi
+      </button>
+    </div>
+    <p class="ol-info">
+      Halaman di-cache saat online: index · about · structure · members · skills
+    </p>
+  </body>
+</html>
+
+
+
+
+

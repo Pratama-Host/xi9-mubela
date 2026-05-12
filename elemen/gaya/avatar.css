@@ -1,0 +1,109 @@
+/* ================================================================
+   avatar.css — TKJ XI-9 | Avatar component
+   ================================================================ */
+
+.avatar {
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--accent-700), var(--accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+  position: relative;
+  user-select: none;
+  line-height: 1;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.2);
+  animation: avatarPulse 3s ease-in-out infinite;
+}
+@keyframes avatarPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.2);
+  }
+
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 18px rgba(var(--accent-rgb), 0.4);
+    border-color: var(--accent-2);
+  }
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.avatar.md {
+  width: 56px;
+  height: 56px;
+  font-size: 1.3rem;
+}
+
+.avatar.lg {
+  width: 76px;
+  height: 76px;
+  font-size: 1.8rem;
+}
+
+.avatar.xl {
+  width: 96px;
+  height: 96px;
+  font-size: 2.2rem;
+}
+.avatar-ring {
+  border: 2px solid var(--border-mid);
+  transition: border-color 0.3s var(--ease-in-out), box-shadow 0.3s var(--ease-in-out);
+}
+
+@media (hover: hover) {
+
+  a:hover .avatar-ring,
+  .member-card:hover .avatar-ring,
+  .org-card:hover .avatar-ring {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.15);
+  }
+}
+.avatar-initials {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-900), var(--accent-700));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Modal avatar */
+#modal-avatar {
+  transition: all 0.3s var(--ease-in-out);
+}
+
+#modal-avatar[style*="cursor: pointer"] {
+  position: relative;
+}
+
+@media (hover: hover) {
+  #modal-avatar[style*="cursor: pointer"]:hover {
+    transform: scale(1.08);
+    filter: brightness(1.1);
+    box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.4);
+  }
+
+  #modal-avatar[style*="cursor: pointer"]:active {
+    transform: scale(0.95);
+  }
+}

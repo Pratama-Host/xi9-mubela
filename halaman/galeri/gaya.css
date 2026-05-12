@@ -1,0 +1,347 @@
+/* ================================================================
+   halaman/galeri/gaya.css — TKJ XI-9 | Gallery Page
+   ================================================================ */
+.grid-galeri {
+  gap: 12px;
+}
+
+@media (min-width: 540px) {
+  .grid-galeri {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-galeri {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .grid-galeri {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid-galeri {
+    column-count: 3;
+    column-gap: 16px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .grid-galeri {
+    column-count: 4;
+    column-gap: 16px;
+  }
+}
+
+.item-galeri {
+  break-inside: avoid;
+  column-span: auto;
+  border-radius: var(--radius-s);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  margin-bottom: 10px;
+  display: inline-block;
+  width: 100%;
+  animation: galleryReveal 0.6s var(--ease-in-out) both;
+  animation-delay: calc(var(--d, 0s));
+  transition: transform 0.35s var(--ease-spring), box-shadow 0.35s var(--ease-in-out), border-color 0.25s, filter 0.35s var(--ease-in-out);
+}
+
+@media (hover: hover) {
+  .item-galeri:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 40px var(--glow), 0 4px 12px rgba(0, 0, 0, 0.35);
+    border-color: var(--border-mid);
+    z-index: 2;
+    filter: brightness(1.08) saturate(1.15);
+  }
+
+  .item-galeri:hover .keterangan-galeri {
+    opacity: 1;
+  }
+}
+
+.item-galeri:active {
+  transform: translateY(-2px) scale(0.98);
+  transition: transform 0.12s ease;
+}
+
+.item-galeri img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform-origin: center center;
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-in-out), transform 0.35s var(--ease-spring);
+}
+
+.item-galeri img.loaded {
+  opacity: 1;
+}
+
+@media (hover: hover) {
+  .item-galeri:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.04) contrast(1.05);
+  }
+}
+
+.grid-galeri.fade-out {
+  opacity: 0.18;
+  transition: opacity 0.22s var(--ease-out);
+}
+
+.keterangan-galeri {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, var(--bg));
+  padding: 28px 12px 12px;
+  transition: opacity 0.35s var(--ease-in-out), transform 0.35s var(--ease-spring);
+  transform: translateY(0);
+}
+
+.keterangan-galeri span {
+  font-family: "Fira Code", monospace;
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: block;
+  animation: captionSlideIn 0.5s var(--ease-in-out);
+}
+
+@media (hover: none) {
+  .keterangan-galeri {
+    opacity: 1;
+  }
+}
+
+@media (hover: hover) {
+  .keterangan-galeri {
+    opacity: 0;
+  }
+}
+
+.placeholder-galeri {
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--text-3);
+  padding: 20px;
+  animation: placeholderPulse 2s ease-in-out infinite;
+}
+
+.placeholder-galeri i {
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.item-galeri:hover .placeholder-galeri i {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.placeholder-galeri span {
+  font-family: "Fira Code", monospace;
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.catatan-galeri {
+  text-align: center;
+  margin-top: 16px;
+  font-family: "Fira Code", monospace;
+  font-size: var(--text-xs);
+  color: var(--text-3);
+  letter-spacing: 0.1em;
+  transition: color var(--trans);
+}
+
+.gallery-skeleton {
+  height: 180px;
+  border-radius: var(--radius-s);
+  border: 1px solid var(--border);
+  break-inside: avoid;
+  column-span: auto;
+  margin-bottom: 10px;
+  display: inline-block;
+  width: 100%;
+}
+
+/* ================================================================
+   Carousel 3D Styles
+   ================================================================ */
+.carousel-3d-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  perspective: 1000px;
+  overflow: visible;
+}
+
+.carousel-3d {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+}
+
+.carousel-item {
+  position: absolute;
+  width: 60%;
+  height: 80%;
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  transition: transform 0.5s var(--ease-spring), opacity 0.5s var(--ease-in-out), z-index 0.5s;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.carousel-item.active {
+  transform: translateX(0) translateZ(0) scale(1);
+  opacity: 1;
+  z-index: 5;
+  box-shadow: var(--shadow-lg), 0 0 20px rgba(var(--accent-rgb), 0.2);
+}
+
+.carousel-item.prev,
+.carousel-item.next {
+  z-index: 4;
+  opacity: 0.8;
+}
+
+.carousel-item.prev {
+  transform: translateX(-40%) translateZ(-100px) scale(0.85);
+}
+
+.carousel-item.next {
+  transform: translateX(40%) translateZ(-100px) scale(0.85);
+}
+
+.carousel-item.prev-hidden {
+  transform: translateX(-70%) translateZ(-200px) scale(0.7);
+  opacity: 0;
+  z-index: 3;
+}
+
+.carousel-item.next-hidden {
+  transform: translateX(70%) translateZ(-200px) scale(0.7);
+  opacity: 0;
+  z-index: 3;
+}
+
+/* Controls */
+.carousel-3d-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 1.5rem;
+}
+
+.carousel-3d-prev,
+.carousel-3d-next {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text-1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--trans);
+}
+
+.carousel-3d-prev:hover,
+.carousel-3d-next:hover {
+  background: var(--accent);
+  color: var(--text-1-inverse);
+  border-color: var(--accent);
+  transform: scale(1.1);
+}
+
+.carousel-3d-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--text-3);
+  cursor: pointer;
+  transition: all var(--trans);
+  border: none;
+  padding: 0;
+}
+
+.carousel-dot.active {
+  background: var(--accent);
+  transform: scale(1.3);
+}
+
+@media (max-width: 768px) {
+  .carousel-3d {
+    height: 300px;
+  }
+
+  .carousel-item {
+    width: 75%;
+  }
+
+  .carousel-item.prev {
+    transform: translateX(-30%) translateZ(-100px) scale(0.85);
+  }
+
+  .carousel-item.next {
+    transform: translateX(30%) translateZ(-100px) scale(0.85);
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-3d {
+    height: 220px;
+  }
+
+  .carousel-item {
+    width: 85%;
+  }
+
+  .carousel-item.prev {
+    transform: translateX(-20%) translateZ(-100px) scale(0.85);
+  }
+
+  .carousel-item.next {
+    transform: translateX(20%) translateZ(-100px) scale(0.85);
+  }
+}

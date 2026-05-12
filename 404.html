@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
+                 script-src 'self' 'unsafe-inline'; 
+                 style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; 
+                 font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; 
+                 img-src 'self' data: blob: *; 
+                 media-src 'self' data: blob: *; 
+                 connect-src 'self';">
+
+    <title>404 — Halaman Tidak Ditemukan | TKJ XI-9</title>
+    <meta name="description" content="Halaman yang kamu cari tidak ditemukan. Sistem mengalihkan kembali ke beranda TKJ XI-9 SMK Muhammadiyah Belitang.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="manifest" href="./manifest.json">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23b91c1c'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='700' font-size='13' fill='white'>TKJ</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Rajdhani:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Styles & Scripts Path Resolver -->
+    <script>
+        (function() {
+            // Find root path relative to this file
+            // Since 404.html is in root, we just need to know how many levels deep the CURRENT URL is
+            const depth = window.location.pathname.split('/').filter(Boolean).length;
+            // Note: This logic depends on whether the site is in a subdirectory or domain root.
+            // A more robust way for this specific project structure:
+            const pathParts = window.location.pathname.split('/');
+            const isSubfolder = pathParts.includes('halaman') || pathParts.includes('others');
+            const rootPrefix = isSubfolder ? '../../' : './';
+            
+            window.__ROOT__ = rootPrefix;
+
+            // Inject styles
+            const styles = [
+                'pokok/gaya/dasar.css',
+                'pokok/gaya/animasi.css',
+                'pokok/gaya/tata-letak.css',
+                'elemen/gaya/tombol.css'
+            ];
+            styles.forEach(s => {
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = rootPrefix + s;
+                document.head.appendChild(link);
+            });
+
+            // Set theme early
+            const t = localStorage.getItem("tkj-theme") || "dark";
+            document.documentElement.setAttribute("data-theme", t);
+        })();
+    </script>
+    <style>
+        :root {
+            --glitch-dur: 4s;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            background: var(--bg);
+        }
+
+        /* 404 Content Container */
+        .nf-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        /* Retro Overlay Effects */
+        .nf-overlay {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 2;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+            background-size: 100% 4px, 3px 100%;
+            opacity: 0.15;
+        }
+
+        .nf-grid {
+            position: fixed;
+            inset: 0;
+            background-image: 
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 50px 50px;
+            background-position: center;
+            mask-image: radial-gradient(circle at center, black, transparent 80%);
+            opacity: 0.3;
+            z-index: 0;
+            animation: gridMove 60s linear infinite;
+        }
+
+        @keyframes gridMove {
+            from { background-position: 0 0; }
+            to { background-position: 500px 500px; }
+        }
+
+        /* Glitch Title */
+        .nf-code {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(6rem, 25vw, 12rem);
+            font-weight: 700;
+            line-height: 0.8;
+            color: var(--text-1);
+            position: relative;
+            margin-bottom: 1rem;
+            text-shadow: 0.05em 0 0 var(--accent), -0.025em -0.05em 0 var(--accent-2),
+                         0.025em 0.05em 0 #00ffff;
+            animation: glitch 1s infinite;
+        }
+
+        .nf-code span {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .nf-code span:first-child {
+            animation: glitch 650ms infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+            transform: translate(-0.025em, -0.0125em);
+            opacity: 0.8;
+        }
+
+        .nf-code span:last-child {
+            animation: glitch 375ms infinite;
+            clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+            transform: translate(0.0125em, 0.025em);
+            opacity: 0.8;
+        }
+
+        @keyframes glitch {
+            0% { text-shadow: 0.05em 0 0 var(--accent), -0.05em -0.025em 0 var(--accent-2), -0.025em 0.05em 0 #00ffff; }
+            14% { text-shadow: 0.05em 0 0 var(--accent), -0.05em -0.025em 0 var(--accent-2), -0.025em 0.05em 0 #00ffff; }
+            15% { text-shadow: -0.05em -0.025em 0 var(--accent), 0.025em 0.025em 0 var(--accent-2), -0.05em -0.05em 0 #00ffff; }
+            49% { text-shadow: -0.05em -0.025em 0 var(--accent), 0.025em 0.025em 0 var(--accent-2), -0.05em -0.05em 0 #00ffff; }
+            50% { text-shadow: 0.025em 0.05em 0 var(--accent), 0.05em 0 0 var(--accent-2), 0 -0.05em 0 #00ffff; }
+            99% { text-shadow: 0.025em 0.05em 0 var(--accent), 0.05em 0 0 var(--accent-2), 0 -0.05em 0 #00ffff; }
+            100% { text-shadow: -0.025em 0 0 var(--accent), -0.025em -0.025em 0 var(--accent-2), -0.025em -0.05em 0 #00ffff; }
+        }
+
+        .nf-title {
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .nf-desc {
+            font-size: var(--text-base);
+            color: var(--text-2);
+            max-width: 500px;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* Terminal Box */
+        .nf-terminal {
+            background: var(--bg-2);
+            border: 1px solid var(--border-mid);
+            border-radius: var(--radius-xs);
+            padding: 1rem;
+            width: 100%;
+            max-width: 500px;
+            text-align: left;
+            font-family: 'Fira Code', monospace;
+            font-size: var(--text-xs);
+            color: var(--text-3);
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+
+        .nf-terminal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--accent);
+            opacity: 0.5;
+            border-radius: var(--radius-xs) var(--radius-xs) 0 0;
+        }
+
+        .terminal-line {
+            margin-bottom: 0.25rem;
+            display: block;
+        }
+
+        .terminal-prompt { color: var(--accent); font-weight: bold; }
+        .terminal-error { color: #f87171; }
+        .terminal-success { color: #4ade80; }
+
+        /* Actions */
+        .nf-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Countdown */
+        .nf-countdown-wrap {
+            margin-top: 2.5rem;
+            font-family: 'Fira Code', monospace;
+            font-size: var(--text-xs);
+            color: var(--text-3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .nf-progress-bar {
+            width: 200px;
+            height: 4px;
+            background: var(--bg-3);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .nf-progress-fill {
+            height: 100%;
+            background: var(--accent);
+            width: 100%;
+            transform-origin: left;
+            transition: transform 1s linear;
+        }
+
+        .nf-cancel-btn {
+            background: transparent;
+            border: 1px solid var(--border);
+            padding: 4px 12px;
+            border-radius: var(--radius-xs);
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: var(--trans);
+        }
+
+        .nf-cancel-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        @media (max-width: 640px) {
+            .nf-code { font-size: 5rem; }
+            .nf-terminal { max-width: 90vw; }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="nf-overlay" aria-hidden="true"></div>
+    <div class="nf-grid" aria-hidden="true"></div>
+
+    <!-- Animated background canvas (Loaded from utama.js) -->
+    <canvas id="kanvas-jaringan"></canvas>
+
+    <!-- Background Audio (Persistent) -->
+    <iframe id="bingkai-audio" src="./elemen/audio-player.html" style="display: none" aria-hidden="true" allow="autoplay"></iframe>
+
+    <header class="bilah-atas" role="banner" style="position: fixed; top: 0; left: 0; right: 0; z-index: 100;">
+        <div class="brand-bilah-atas">
+            <a id="home-link" href="./index.html" aria-label="TKJ XI-9 — Beranda">
+                <img id="brand-logo" src="./assets/logo/logo-utama.svg" alt="Logo TKJ XI-9" class="brand-badge brand-logo">
+                <div>
+                    <div class="brand-name">TKJ XI-9</div>
+                    <div class="brand-year mono">2026/2027</div>
+                </div>
+            </a>
+        </div>
+        <div class="aksi-bilah-atas">
+            <!-- Populated by utama.js -->
+        </div>
+    </header>
+
+    <main class="nf-container">
+        <div class="nf-code" aria-label="404">
+            404
+            <span aria-hidden="true">404</span>
+            <span aria-hidden="true">404</span>
+        </div>
+
+        <h1 class="nf-title">OBJECT NOT FOUND</h1>
+        <p class="nf-desc">
+            Rute yang Anda cari berada di luar jangkauan sistem kami. 
+            Mungkin URL telah dipindahkan atau dihapus secara permanen.
+        </p>
+
+        <div class="nf-terminal" id="terminal">
+            <span class="terminal-line"><span class="terminal-prompt">$</span> GET <span id="current-path">/page-not-found</span></span>
+            <span class="terminal-line terminal-error">ERROR 404: RESOURCE_UNDEFINED</span>
+            <span class="terminal-line"><span class="terminal-prompt">$</span> pinging gateway.tkj_xi9...</span>
+        </div>
+
+        <div class="nf-actions">
+            <a id="home-btn" href="./index.html" class="tombol tombol-utama">
+                <i class="fas fa-house" aria-hidden="true"></i> Beranda Sistem
+            </a>
+            <a id="members-btn" href="./halaman/anggota/index.html" class="tombol tombol-garis">
+                <i class="fas fa-users" aria-hidden="true"></i> Database Anggota
+            </a>
+        </div>
+
+        <div class="nf-countdown-wrap" id="countdown-wrap">
+            <div class="nf-progress-bar">
+                <div class="nf-progress-fill" id="progress-fill"></div>
+            </div>
+            <div>Mengalihkan otomatis dalam <span id="timer" class="hl">10</span> detik...</div>
+            <button class="nf-cancel-btn" id="cancel-timer">Batalkan Pengalihan</button>
+        </div>
+    </main>
+
+    <!-- Global Scripts -->
+    <script>
+        // Set dynamic paths
+        const root = window.__ROOT__ || './';
+        document.getElementById('brand-logo').src = root + 'assets/logo/logo-utama.svg';
+        document.getElementById('home-link').href = root + 'index.html';
+        document.getElementById('home-btn').href = root + 'index.html';
+        document.getElementById('members-btn').href = root + 'halaman/anggota/index.html';
+        document.getElementById('current-path').textContent = window.location.pathname;
+
+        // Load utama.js
+        const script = document.createElement('script');
+        script.type = 'module';
+        script.src = root + 'pokok/skrip/utama.js';
+        document.body.appendChild(script);
+    </script>
+
+    <script>
+        // Terminal animation logic (Inlined to avoid module dependency)
+        function typeText(el, text, speed = 30) {
+            if (!el) return;
+            el.textContent = "";
+            let i = 0;
+            const t = setInterval(() => {
+                el.textContent += text.charAt(i++);
+                if (i >= text.length) {
+                    clearInterval(t);
+                    el.classList.remove("typing");
+                }
+            }, speed + Math.floor(Math.random() * 20));
+        }
+
+        async function runTerminal() {
+            const terminal = document.getElementById('terminal');
+            if (!terminal) return;
+
+            const lines = [
+                { text: '64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.041 ms', class: '' },
+                { text: '64 bytes from 127.0.0.1: icmp_seq=2 ttl=64 time=0.038 ms', class: '' },
+                { text: 'RECOVERY_INITIATED: redirecting to node/HOME', class: 'terminal-success' }
+            ];
+
+            for (const line of lines) {
+                await new Promise(r => setTimeout(r, 1200));
+                const span = document.createElement('span');
+                span.className = 'terminal-line ' + line.class;
+                terminal.appendChild(span);
+                typeText(span, line.text, 20);
+                terminal.scrollTop = terminal.scrollHeight;
+            }
+        }
+
+        // Countdown Logic
+        function initCountdown() {
+            const timerEl = document.getElementById('timer');
+            const progressFill = document.getElementById('progress-fill');
+            const cancelBtn = document.getElementById('cancel-timer');
+            const countdownWrap = document.getElementById('countdown-wrap');
+
+            if (!timerEl || !progressFill) return;
+
+            let timeLeft = 10;
+            let isCancelled = false;
+
+            const interval = setInterval(() => {
+                if (isCancelled) return;
+                
+                timeLeft--;
+                timerEl.textContent = timeLeft;
+                progressFill.style.transform = `scaleX(${timeLeft / 10})`;
+
+                if (timeLeft <= 0) {
+                    clearInterval(interval);
+                    window.location.href = './index.html';
+                }
+            }, 1000);
+
+            cancelBtn?.addEventListener('click', () => {
+                isCancelled = true;
+                countdownWrap.style.opacity = '0.5';
+                cancelBtn.textContent = 'Pengalihan Dibatalkan';
+                cancelBtn.disabled = true;
+                progressFill.style.background = 'var(--text-3)';
+            });
+        }
+
+        window.addEventListener('load', () => {
+            runTerminal();
+            initCountdown();
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,228 @@
+﻿/* ================================================================
+   halaman/tkj/gaya.css — TKJ XI-9 | TKJ Page + Tools
+   ================================================================ */
+.tkj-hero {
+   background: linear-gradient(135deg, var(--surface) 0%, var(--bg-3) 80%, var(--bg-2) 100%);
+   border: 1px solid var(--border);
+   border-radius: var(--radius-l);
+   padding: 30px 26px;
+   margin-bottom: 24px;
+   position: relative;
+   overflow: hidden;
+}
+
+.tkj-hero::before {
+   content: "TKJ";
+   position: absolute;
+   right: -16px;
+   bottom: -28px;
+   font-family: "Fira Code", monospace;
+   font-size: 8rem;
+   font-weight: 700;
+   color: var(--accent);
+   opacity: 0.04;
+   line-height: 1;
+   pointer-events: none;
+   user-select: none;
+   letter-spacing: -0.04em;
+}
+
+.tkj-hero::after {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   height: 2px;
+   background: linear-gradient(90deg, var(--accent-700), var(--accent), transparent);
+}
+
+.tkj-hero h1 {
+   font-family: "Rajdhani", sans-serif;
+   font-size: var(--text-2xl);
+   font-weight: 700;
+   color: var(--text-1);
+   margin-bottom: 10px;
+   transition: color var(--trans);
+}
+
+.tkj-hero p {
+   font-size: var(--text-sm);
+   color: var(--text-2);
+   line-height: 1.7;
+   max-width: 540px;
+}
+
+.tkj-grid {
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: 16px;
+}
+
+@media (min-width: 640px) {
+   .tkj-grid {
+      grid-template-columns: 1fr 1fr;
+   }
+}
+
+.tkj-card {
+   padding: 20px;
+}
+
+.tkj-card h3 {
+   font-family: "Rajdhani", sans-serif;
+   font-size: var(--text-lg);
+   font-weight: 700;
+   color: var(--text-1);
+   margin: 12px 0 14px;
+   transition: color var(--trans);
+}
+
+.mapel-list {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 8px;
+}
+
+.mapel-item {
+   display: flex;
+   align-items: center;
+   gap: 6px;
+   padding: 7px 12px;
+   background: var(--bg-3);
+   border: 1px solid var(--border);
+   border-radius: 6px;
+   font-size: var(--text-xs);
+   color: var(--text-2);
+   transition: border-color var(--trans), color var(--trans), background var(--trans);
+}
+
+@media (hover: hover) {
+   .mapel-item:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+   }
+}
+
+.mapel-item i {
+   color: var(--accent);
+   font-size: 0.8rem;
+}
+
+.karir-list {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.karir-item {
+   display: flex;
+   gap: 12px;
+   align-items: flex-start;
+   padding: 14px;
+   background: var(--bg-3);
+   border-radius: var(--radius-s);
+   border: 1px solid var(--border);
+   transition: border-color 0.25s var(--ease-in-out), background 0.25s, transform 0.25s var(--ease-spring), box-shadow 0.25s;
+   cursor: default;
+}
+
+@media (hover: hover) {
+   .karir-item:hover {
+      border-color: var(--border-mid);
+      background: var(--surface);
+      transform: translateX(6px);
+      box-shadow: -3px 0 12px rgba(var(--accent-rgb), 0.1);
+   }
+
+   .karir-item:hover .karir-icon {
+      background: rgba(var(--accent-rgb), 0.15);
+      border-color: var(--accent);
+      color: var(--accent);
+   }
+}
+
+.karir-icon {
+   width: 34px;
+   height: 34px;
+   border-radius: var(--radius-s);
+   background: rgba(var(--accent-rgb), 0.1);
+   border: 1px solid var(--border-mid);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: var(--accent);
+   font-size: 0.85rem;
+   flex-shrink: 0;
+}
+
+.karir-info h4 {
+   font-weight: 700;
+   font-size: var(--text-sm);
+   color: var(--text-1);
+   margin-bottom: 2px;
+   transition: color var(--trans);
+}
+
+.karir-info p {
+   font-size: var(--text-xs);
+   color: var(--text-3);
+   line-height: 1.5;
+   transition: color var(--trans);
+}
+
+.kurikulum-list {
+   display: flex;
+   flex-direction: column;
+   gap: 0;
+}
+
+.kur-item {
+   display: flex;
+   gap: 14px;
+   align-items: flex-start;
+   padding: 14px 0;
+   border-bottom: 1px solid var(--border);
+   transition: border-color var(--trans);
+}
+
+.kur-item:last-child {
+   border-bottom: none;
+}
+
+.kur-dot {
+   width: 10px;
+   height: 10px;
+   border-radius: 50%;
+   background: var(--accent);
+   margin-top: 5px;
+   flex-shrink: 0;
+   box-shadow: 0 0 6px var(--glow);
+}
+
+.kur-item h4 {
+   font-family: "Fira Code", monospace;
+   font-size: var(--text-xs);
+   color: var(--accent);
+   margin-bottom: 3px;
+   letter-spacing: 0.06em;
+}
+
+.kur-item p {
+   font-size: var(--text-sm);
+   color: var(--text-2);
+   line-height: 1.6;
+   transition: color var(--trans);
+}
+
+/* Tools */
+.list-disc {
+   margin: 18px 0 0;
+   padding-left: 1.4rem;
+   list-style: disc inside;
+   color: var(--text-1);
+}
+
+.list-disc li {
+   margin-bottom: 10px;
+}
